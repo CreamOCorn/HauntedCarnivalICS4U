@@ -1,4 +1,7 @@
 
-public class CursedConsumables {
+public class CursedConsumables extends DevilishDiner {
 
+	public CursedConsumables () { 
+		
+	}
 }
