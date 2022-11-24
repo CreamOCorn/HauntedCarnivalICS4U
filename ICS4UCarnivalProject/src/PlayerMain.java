@@ -22,8 +22,6 @@ public class PlayerMain {
 		System.out.println("You enter the gate, greeted by ghosts, ghouls, and witches all around. Attractions left and right all catch your eye.");
 		input.nextLine();
 		
-		
-		
 		System.out.println("Where would you like to go?\n"
 							+ "1) Roulette\n"
 							+ "2) Graveyard Dig\n"

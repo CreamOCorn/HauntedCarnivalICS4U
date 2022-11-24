@@ -1,5 +1,5 @@
 
-public class DevilishDiner extends HauntedCarnival {
+public abstract class DevilishDiner extends HauntedCarnival {
 
     public DevilishDiner () {
         
