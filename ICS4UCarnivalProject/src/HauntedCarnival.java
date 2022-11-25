@@ -24,6 +24,26 @@ public class HauntedCarnival {
 		return tickets;
 	}
 	
+	public void setMoney(int money1) {
+		
+		money = money1;
+	}
+	
+	public void setTickets(int tickets1) {
+		
+		tickets = tickets1;
+	}
+	
+	public void addMoney(int money1) {
+		
+		money += money1;
+	}
+	
+	public void addTickets(int tickets1) {
+		
+		tickets += tickets1;
+	}
+	
 	public String[] getInventory() {
 		
 		return inventory;
@@ -59,5 +79,17 @@ public class HauntedCarnival {
 		}while(howmuch < money);
 		
 		input.close();
+	}
+	
+	public String toString() {
+		
+		String info = "Money: " + money + "\nTickets: " + tickets + "\nInventory: ";
+		
+		for(int i = 0; i < inventory.length; i++) {
+			
+			info += inventory[i] + ", ";
+		}
+		
+		return info;
 	}
 }
