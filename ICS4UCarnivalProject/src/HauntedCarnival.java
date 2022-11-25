@@ -34,6 +34,24 @@ public class HauntedCarnival {
 		tickets = tickets1;
 	}
 	
+	public void setInventory(String[] a) {
+		
+		inventory = a;
+	}
+	
+	public String[] addInventory(String[] aa, String a) {
+		
+		String[] newarr = new String[aa.length + 1];
+		
+		for(int i = 0; i < aa.length; i++) {
+			
+			newarr[i] = aa[i];
+		}
+		newarr[aa.length] = a;
+		
+		return newarr;
+	}
+	
 	public void addMoney(int money1) {
 		
 		money += money1;
@@ -44,9 +62,17 @@ public class HauntedCarnival {
 		tickets += tickets1;
 	}
 	
-	public String[] getInventory() {
+	public String[] getInventoryArray() {
 		
 		return inventory;
+	}
+	
+	public void showInventory() {
+		
+		for(int i = 0; i < inventory.length; i++) {
+			
+			System.out.print(inventory[i] + " ");
+		}
 	}
 	
 	public void convertToTickets() {
@@ -87,7 +113,7 @@ public class HauntedCarnival {
 		
 		for(int i = 0; i < inventory.length; i++) {
 			
-			info += inventory[i] + ", ";
+			info += inventory[i] + " ";
 		}
 		
 		return info;
