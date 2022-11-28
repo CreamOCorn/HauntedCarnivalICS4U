@@ -24,7 +24,7 @@ public class HauntedCarnival {
 		return tickets;
 	}
 	
-	public void setMoney(int money1) {
+	public void setMoney(double money1) {
 		
 		money = money1;
 	}
