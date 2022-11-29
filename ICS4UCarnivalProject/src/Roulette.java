@@ -46,10 +46,14 @@ public class Roulette extends HauntedCarnival {
 					System.out.println("CONGRATULATIONS!!! YOU ARE NOW A MILLIONAIRE!!! YOU HAVE WON 1'000'000 TICKETS!!!");
 					super.addTickets(1000000);
 					
-				} else {
+				} else if(num > 100000 && num <= 500000){
 					
 					System.out.println("You've won 20 tickets.");
 					super.addTickets(20);
+					
+				} else {
+					
+					System.out.println("Get REKT Bozo :D");
 				}
 				
 				super.setMoney(super.getMoney() - 5); 
