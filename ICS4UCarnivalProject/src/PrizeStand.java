@@ -1,16 +1,22 @@
 import java.util.*;
 
 public class PrizeStand extends HauntedCarnival {
+	
+	
 
 	public PrizeStand(int money1, String[] inventory1) {
 		
 		super(money1, inventory1);
 	}
 
-	Random rand = new Random();
-	Scanner sc = new Scanner(System.in);
+	
+
 	
 	public void moneyAsk(int money1) {
+
+		Random rand = new Random();
+		Scanner sc = new Scanner(System.in);
+		
 		String userInput;
 		System.out.println("Would you like to call your mom for more money?Y/N");
 		userInput = sc.nextLine();
@@ -22,10 +28,12 @@ public class PrizeStand extends HauntedCarnival {
 			randInput = rand.nextInt(2)+ 1;
 			
 			if(randInput == 1) {
-				System.out.println("Congrats your mom said yes, you have now been given 100 more dollars!");
+				System.out.println("\nCongrats your mom said yes, you have now been given 100 more dollars!");
 				money1 = money1 + 100; 
+				
+				System.out.println("\nYou have: " + super.getMoney() + " dollars!");
 			}else {
-				System.out.println("Your mom said no, you have been given no money!");
+				System.out.println("\nYour mom said no, you have been given no money!");
 			}
 		}else {
 			 System.out.println("Continue at the carnival!");
@@ -33,6 +41,10 @@ public class PrizeStand extends HauntedCarnival {
 	}
 	
 	public void toys(String inventory1) {
+		
+		Random rand = new Random();
+		Scanner sc = new Scanner(System.in);
+		
 		String plushInput;
 		System.out.println("Welcome to the Plushy Store!" + "/n Here you have many options, from cute plushies, to SCARY ones! The plushys cost 20$ each");
 		System.out.println("Would you like to buy plushies? Y/N");
@@ -48,7 +60,7 @@ public class PrizeStand extends HauntedCarnival {
 			
 			System.out.println("Now you get to choose which plushy you want! Use the numbers 1-5 to choose which teady fits you best!");
 			
-			int plushChoice;
+			int plushChoice = 0;
 			
 			if(plushChoice == 1) {
 				String panda = ("You picked the Panda Plushy!" + "\n Collect your prize:"
@@ -69,9 +81,10 @@ public class PrizeStand extends HauntedCarnival {
 						+ "				+ \"⠀⠀⠀⠀⣿⣿⣿⣿⣶⠶⠤⠤⢤⣶⣾⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀\\r\\n\"\r\n"
 						+ "				+ \"⠀⠀⠀⠀⠹⣿⣿⣿⠏⠀⠀⠀⠈⢿⣿⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀\\r\\n\"\r\n"
 						+ "				+ \"⠀⠀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀⠀⠀⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀\");");
-				
-				inventory1 = inventory1 + panda;
-				
+			
+				super.addInventory(super.getInventoryArray(), "panda");
+			
+				System.out.println(panda);
 				
 			}else if(plushChoice == 2) {
 				String turtle = ("You picked the Turtle Plushy!" + "\n Collect your prize:"
@@ -88,7 +101,9 @@ public class PrizeStand extends HauntedCarnival {
 			+ "				+ \"⠀⠀⡇⠀⠀⢉⣙⣒⣒⣒⣚⣉⠁⠀⢣⡤⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\\r\\n\"\r\n"
 			+ "				+ \"⠀⠀⠙⠒⠒⠚⠒⠋⠉⠉⠀⠈⠓⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\"");
 				
-				inventory1 = inventory1 + turtle;
+				super.addInventory(super.getInventoryArray(), "turtle");
+				
+				System.out.println(turtle);
 				
 			} else if(plushChoice == 3) {
 				String spider = ("You picked the spider Plushy!" + "\n Collect your price:"
@@ -113,7 +128,9 @@ public class PrizeStand extends HauntedCarnival {
 			+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠀⢸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 			+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢐⣇⣀⣸⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
 				
-				inventory1 = inventory1 + spider;
+				super.addInventory(super.getInventoryArray(), "spider");
+				
+				System.out.println(spider);
 			}else if(plushChoice == 4) {
 				String pumpkin = ("You picked the Pumpkin plushy!" + "\n Collect your prize:" 
 			+ "\"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\\r\\n\"\r\n"
@@ -141,9 +158,11 @@ public class PrizeStand extends HauntedCarnival {
 			+ "			+ \"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠳⣄⣀⣀⡤⠖⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠒⠒⠋⠁⠀⠀\\r\\n\"\r\n"
 			+ "			+ \"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\"");
 				
-				inventory1 = inventory1 + pumpkin;
+				super.addInventory(super.getInventoryArray(), "pumpkin");
 				
-			}else if(plushChoice ==5) {
+				System.out.println(pumpkin);
+				
+			}else if(plushChoice == 5) {
 				String ghost = ("You picked the ghost plushy!" + "\n collect your price:"
 			+ "\n ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣶⣶⣶⣶⣶⣶⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\\r\\n\"\r\n"
 			+ "			+ \"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\\r\\n\"\r\n"
@@ -172,6 +191,9 @@ public class PrizeStand extends HauntedCarnival {
 			+ "			+ \"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⢿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\\r\\n\"\r\n"
 			+ "			+ \"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠛⠿⠿⠿⠿⠿⠿⠿⠿⠿⠛⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\"");
 				
+				super.addInventory(super.getInventoryArray(), "ghost");
+				
+				System.out.println(ghost);
 			}
 		}
 		

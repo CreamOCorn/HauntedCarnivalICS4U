@@ -6,7 +6,7 @@ public class test {
 
 		String[] aa = new String[0];
 		int money = 100;
-		Roulette a = new Roulette(money, aa);
+		PrizeStand a = new PrizeStand(money, aa);
 		
 		
 		a.addInventory(a.getInventoryArray(), "beer");
@@ -15,10 +15,14 @@ public class test {
 		
 		System.out.println(a);
 		
-		a.playRoulette();
+
 		
 		System.out.println(a.getMoney());
 		System.out.println(a.getTickets());
+		
+		
+		
+		a.moneyAsk(money);
 	}
 
 }
