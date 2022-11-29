@@ -49,10 +49,10 @@ public class HauntedCarnival {
 		}
 		newarr[aa.length] = a;
 		
-		return newarr;
+		return inventory = newarr;
 	}
 	
-	public void addMoney(int money1) {
+	public void addMoney(double money1) {
 		
 		money += money1;
 	}
