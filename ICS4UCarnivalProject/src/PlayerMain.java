@@ -1,3 +1,9 @@
+/*Author: An Ha
+ *Date: November 25, 2022
+ *Course: ICS4U
+ *Description: The program allows the user to 
+ */
+
 import java.util.Scanner;
 
 public class PlayerMain {
