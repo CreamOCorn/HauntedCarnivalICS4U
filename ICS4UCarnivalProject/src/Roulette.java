@@ -54,7 +54,7 @@ public class Roulette extends HauntedCarnival {
 				
 				super.setMoney(super.getMoney() - 5); 
 				
-				System.out.println("Would you like to play again? (Enter \\\"y\\\" or \\\"n\\\")");
+				System.out.println("Would you like to play again? (Enter \"y\" or \"n\")");
 				ans = input.next();
 				
 				if(super.getMoney() <= 0) {

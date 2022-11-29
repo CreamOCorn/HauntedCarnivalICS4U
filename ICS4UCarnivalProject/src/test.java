@@ -8,9 +8,10 @@ public class test {
 		int money = 100;
 		Roulette a = new Roulette(money, aa);
 		
-		String[] inventory = a.getInventoryArray();
-		inventory = a.addInventory(inventory, "beer");
-		a.setInventory(inventory);
+		
+		a.addInventory(a.getInventoryArray(), "beer");
+		a.addInventory(a.getInventoryArray(), "tea");
+
 		
 		System.out.println(a);
 		
