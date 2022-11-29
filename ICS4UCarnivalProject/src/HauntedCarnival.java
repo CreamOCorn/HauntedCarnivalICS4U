@@ -7,7 +7,7 @@ public class HauntedCarnival {
 	private int tickets;
 	private String[] inventory;
 	
-	public HauntedCarnival(int money1, String[] inventory1) {
+	public HauntedCarnival(double money1, String[] inventory1) {
 		
 		money = money1;
 		tickets = 0;
@@ -52,7 +52,7 @@ public class HauntedCarnival {
 		return inventory = newarr;
 	}
 	
-	public void addMoney(int money1) {
+	public void addMoney(double money1) {
 		
 		money += money1;
 	}
