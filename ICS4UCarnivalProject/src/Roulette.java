@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Roulette extends HauntedCarnival {
 	
-	public Roulette(int money1, String[] inventory1) {
+	public Roulette(double money1, String[] inventory1) {
 		
 		super(money1, inventory1);
 		
@@ -69,7 +69,6 @@ public class Roulette extends HauntedCarnival {
 			System.out.println("To bad you don't want to gamble away money :(");
 		}
 		
-		input.close();
 	}
 }
 

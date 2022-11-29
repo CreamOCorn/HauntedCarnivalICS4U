@@ -3,11 +3,11 @@ import java.util.*;
 
 public class HauntedCarnival {
 
-	private double money;
-	private int tickets;
-	private String[] inventory;
+	public static double money;
+	public static int tickets;
+	public static String[] inventory;
 	
-	public HauntedCarnival(int money1, String[] inventory1) {
+	public HauntedCarnival(double money1, String[] inventory1) {
 		
 		money = money1;
 		tickets = 0;
@@ -109,11 +109,11 @@ public class HauntedCarnival {
 	
 	public String toString() {
 		
-		String info = "Money: " + money + "\nTickets: " + tickets + "\nInventory: ";
+		String info = "Money: $" + money + "\nTickets: " + tickets + "\nInventory:\n";
 		
 		for(int i = 0; i < inventory.length; i++) {
 			
-			info += inventory[i] + " ";
+			info += "  " + (i+1) + ") " + inventory[i] + "\n";
 		}
 		
 		return info;
