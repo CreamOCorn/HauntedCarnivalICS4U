@@ -10,6 +10,8 @@ public class test {
 		
 		
 		a.addInventory(a.getInventoryArray(), "beer");
+		a.addInventory(a.getInventoryArray(), "tea");
+
 		
 		System.out.println(a);
 		
