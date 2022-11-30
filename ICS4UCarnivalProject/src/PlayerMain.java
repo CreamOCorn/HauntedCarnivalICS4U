@@ -12,7 +12,7 @@ public class PlayerMain {
 		// TODO Auto-generated method stub
 		String userChoice = "0";
 		Scanner input = new Scanner(System.in);
-		String[] inventory = {"empty", "empty", "empty", "empty", "empty"};
+		String[] inventory = {"Empty", "Empty", "Empty", "Empty", "Empty"};
 		double money;
 		//printIntro(input);
 		
