@@ -7,74 +7,78 @@ public class HauntedCarnival {
 	public static int tickets;
 	public static String[] inventory;
 	
-	public HauntedCarnival(double money1, String[] inventory1) {
-		
+	public HauntedCarnival(double money1) {
 		money = money1;
 		tickets = 0;
-		inventory = inventory1;
+		inventory = new String [0]; //start as an empty array
 	}
 	
-	public double getMoney() {
-		
-		return money;
-	}
+	//I don't think these ever get used in the main... or at all... can i get rid of them?! - An
+//	public double getMoney() {
+//		
+//		return money;
+//	}
+//	
+//	public int getTickets() {
+//		
+//		return tickets;
+//	}
+//	
+//	public void setMoney(double money1) {
+//		
+//		money = money1;
+//	}
+//	
+//	public void setTickets(int tickets1) {
+//		
+//		tickets = tickets1;
+//	}
+//	
+//	public void setInventory(String[] a) {
+//		
+//		inventory = a;
+//	}
 	
-	public int getTickets() {
+	public String[] addInventory(String a) {//serge this method is absolute genius
 		
-		return tickets;
-	}
-	
-	public void setMoney(double money1) {
+		String[] newarr = new String[inventory.length + 1];
 		
-		money = money1;
-	}
-	
-	public void setTickets(int tickets1) {
-		
-		tickets = tickets1;
-	}
-	
-	public void setInventory(String[] a) {
-		
-		inventory = a;
-	}
-	
-	public String[] addInventory(String[] aa, String a) {
-		
-		String[] newarr = new String[aa.length + 1];
-		
-		for(int i = 0; i < aa.length; i++) {
+		for(int i = 0; i < inventory.length; i++) {
 			
-			newarr[i] = aa[i];
+			newarr[i] = inventory[i];
 		}
-		newarr[aa.length] = a;
+		newarr[inventory.length] = a;
 		
 		return inventory = newarr;
 	}
 	
-	public void addMoney(double money1) {
-		
-		money += money1;
-	}
-	
-	public void addTickets(int tickets1) {
-		
-		tickets += tickets1;
-	}
-	
-	public String[] getInventoryArray() {
-		
-		return inventory;
-	}
+	//I don't think these ever get used in the main... or at all... can i get rid of them?! - An
+//	public void addMoney(double money1) {
+//		
+//		money += money1;
+//	}
+//	
+//	public void addTickets(int tickets1) {
+//		
+//		tickets += tickets1;
+//	}
+//	
+//	public String[] getInventoryArray() {
+//		
+//		return inventory;
+//	}
 	
 	public void showInventory() {
-		
-		for(int i = 0; i < inventory.length; i++) {
-			
-			System.out.print(inventory[i] + " ");
+		if (inventory.length == 0) {
+			System.out.print("Seems empty here...");
+		} else {
+			for (int i = 0; i < inventory.length; i++) {
+				System.out.println((i+1) + ") " + inventory[i]);
+			}
 		}
 	}
 	
+	//Should we put this into the prize stand instead? - An
 	public void convertToTickets() {
 		
 		Scanner input = new Scanner(System.in);
@@ -109,11 +113,15 @@ public class HauntedCarnival {
 	
 	public String toString() {
 		
-		String info = "Money: $" + money + "\nTickets: " + tickets + "\nInventory:\n";
+		String info = "Money: $" + money + "\nTickets: " + tickets + "\nInventory:";
 		
-		for(int i = 0; i < inventory.length; i++) {
-			
-			info += "  " + (i+1) + ") " + inventory[i] + "\n";
+		if (inventory.length == 0) {
+			info += "Empty";
+		} else {
+			info += "\n";
+			for(int i = 0; i < inventory.length; i++) {
+				info += "  " + (i+1) + ") " + inventory[i] + "\n";
+			}
 		}
 		
 		return info;
