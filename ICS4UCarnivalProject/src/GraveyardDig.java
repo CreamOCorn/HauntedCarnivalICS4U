@@ -125,7 +125,7 @@ public class GraveyardDig extends HauntedCarnival {
 	}
 	
 	public void dig () {
-		System.out.println("You sink your shovel into plot (" + xValue  + "," + yValue + ")...");
+		System.out.println("You sink your shovel into plot (" + xValue  + "," + yValue + ")...\n");
 		if (plane[yValue-1][xValue-1] == "███") {
 			System.out.println("\nYou already tried digging here so you just kinda dig... a deeper hole...\n");
 		} else {
