@@ -20,7 +20,7 @@ public class test {
 		
 		
 		
-		a.moneyAsk(money);
+		a.toys(null);
 	}
 
 }
