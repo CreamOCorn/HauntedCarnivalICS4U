@@ -1,3 +1,9 @@
+/*Author: An Ha
+ *Date: December 4, 2022
+ *Course: ICS4U
+ *Description: The program allows the user to play through the carnival experiences, such as games, food, and prizes.
+ */
+
 import java.util.Scanner;
 
 public class PlayerMain {
@@ -6,7 +12,13 @@ public class PlayerMain {
 		// TODO Auto-generated method stub
 		String userChoice = "0";
 		Scanner input = new Scanner(System.in);
+		double money;
 		//printIntro(input);
+		
+		System.out.println("You sift through your clothes...");
+		System.out.println("How much money do you find in your pocket?");
+		money = input.nextDouble();
+		HauntedCarnival c = new HauntedCarnival(money);
 		
 		while (!userChoice.equals("9")) { 
 			System.out.println("-----------------------------------------------");
@@ -15,32 +27,59 @@ public class PlayerMain {
 					+ "2) Graveyard Dig\n"
 					+ "3) Haunted Maze\n"
 					+ "4) Devilish Diner\n"
-					+ "5) Prize Stand\n"
+					+ "5) Prize Stand\n\n"
+					+ "6) Check your pockets\n"
 					+ "9) Leave the carnival and go home");
 			input = new Scanner (System.in);
 			userChoice = (input.nextLine());
 			System.out.println();
 			
 			if (userChoice.equals("1") || userChoice.equalsIgnoreCase("Roulette")) {
-				System.out.println("You make your way to the roulette stand. [Press Enter to Continue]");
-				input.nextLine();
+				// Roulette roulette = new Roulette();
+				
+				// System.out.println("You make your way to the roulette stand. [Press Enter to Continue]");
+				// input.nextLine();
+				// roulette.playRoulette();
+				// System.out.println("\nYou exit the stand the walk back to the main area...");
 			} else if (userChoice.equals("2") || userChoice.equalsIgnoreCase("Graveyard Dig")) {
-				System.out.println("The graveyeard digging site. [Press Enter to Continue]");
+				GraveyardDig gd = new GraveyardDig();
+				System.out.println("The graveyeard digging site is fully packed. [Press Enter to Continue]");
 				input.nextLine();
+				gd.playGD();
+				System.out.println("\nYou leave the grave site and then make your way back to the park...");
 			} else if (userChoice.equals("3") || userChoice.equalsIgnoreCase("Haunted Maze")) {
 				System.out.println("The sounds of screams from the hounted maze intruiges you. [Press Enter to Continue]");
 				input.nextLine();
 			} else if (userChoice.equals("4") || userChoice.equalsIgnoreCase("Devilish Diner")) {
 				System.out.println("Your stomach grumbles as you go to the Devilish Diner for a quick bite. [Press Enter to Continue]");
 				input.nextLine();
+				
 			} else if (userChoice.equals("5") || userChoice.equalsIgnoreCase("Prize Stand")) {
-				System.out.println("A huge stand showcasing plushies, toys, and candies lights up the whole park. [Press Enter to Continue]");
-				input.nextLine();
+				// PrizeStand prizestand = new PrizeStand ();
+				// String choice;
+				// System.out.println("A huge stand showcasing plushies, toys, and candies lights up the whole park. [Press Enter to Continue]");
+				// input.nextLine();
+				// System.out.println("\"Please help yourself to anything here!\" says a person with a hat as large as their grin.\n");
+				// System.out.println("1) Use tickets to purchase a plushy\n"
+				// 				+ "2) Go to the ATM Machine");
+				
+				// choice = input.nextLine();
+				
+				// if (choice == "1") {
+				// 	prizestand.toys();
+				// } else if (choice == "2") {
+				// 	prizestand.moneyAsk();
+				// }
+				
+			} else if (userChoice.equals("6") || userChoice.toLowerCase().contains("inventory")) {
+				System.out.println("You unzip your bag...\n");
+				System.out.println(c);
 			} else if (userChoice.equals("9") || userChoice.toLowerCase().contains("leave") || userChoice.toLowerCase().contains("home")) {
 				System.out.println("You stretch as you decide to wrap up for the day. [Press Enter to Continue]");
 				input.nextLine();
 				System.out.println("Waving to all of the kind monsters, you exit the gate. [Press Enter to Continue]");
 				input.nextLine();
+				System.out.println("\"See you again soon!\"");
 			} else {
 				System.out.println("That attraction doesn't seem to exist. You look around again.");
 			}
