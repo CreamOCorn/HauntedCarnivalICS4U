@@ -1,8 +1,10 @@
 
+import java.text.NumberFormat;
 import java.util.*;
 
-public class Player {
 
+public class Player {
+	NumberFormat decimal = NumberFormat.getCurrencyInstance();
 	public double money;
 	public int tickets;
 	public String[] inventory;
@@ -42,7 +44,7 @@ public class Player {
 		Scanner input = new Scanner(System.in);
 		int howmuch;
 		
-		System.out.println("How much money do you want to convert? (You currently have " + money + ")");
+		System.out.println("How much money do you want to convert? (You currently have " + decimal.format(money) + ")");
 		howmuch = input.nextInt();
 		
 		do {
@@ -71,7 +73,7 @@ public class Player {
 	
 	public String toString() {
 		
-		String info = "Money: $" + money + "\nTickets: " + tickets + "\nInventory:";
+		String info = "Money: " + decimal.format(money) + "\nTickets: " + tickets + "\nInventory:";
 		
 		if (inventory.length == 0) {
 			info += " Empty";

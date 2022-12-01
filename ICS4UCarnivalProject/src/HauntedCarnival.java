@@ -1,6 +1,7 @@
+import java.text.NumberFormat;
 
 public class HauntedCarnival {
-	
+	NumberFormat decimal = NumberFormat.getCurrencyInstance();
 	private Player p;
 	
 	public HauntedCarnival(Player player) {
@@ -17,6 +18,10 @@ public class HauntedCarnival {
 	
 	public double getMoney () {
 		return p.money;
+	}
+	
+	public String displayMoney () {
+		return decimal.format(p.money);
 	}
 	
 	public void gainMoney (int cash) {

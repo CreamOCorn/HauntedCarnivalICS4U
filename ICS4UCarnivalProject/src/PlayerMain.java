@@ -20,7 +20,6 @@ public class PlayerMain {
 		System.out.print("How much money do you find in your pocket?\n$ ");
 		money = input.nextDouble();
 		Player p1 = new Player (money);
-		System.out.println(p1);
 		
 		while (!userChoice.equals("9")) { 
 			System.out.println("-----------------------------------------------");
@@ -30,7 +29,7 @@ public class PlayerMain {
 					+ "3) Haunted Maze\n"
 					+ "4) Devilish Diner\n"
 					+ "5) Prize Stand\n\n"
-					+ "6) Check your pockets\n"
+					+ "6) Check your inventory\n"
 					+ "9) Leave the carnival and go home");
 			input = new Scanner (System.in);
 			userChoice = (input.nextLine());

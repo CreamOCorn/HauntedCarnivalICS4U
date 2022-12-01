@@ -160,7 +160,7 @@ public class GraveyardDig extends HauntedCarnival {
 		System.out.println("You dug up... a " + prizes[randNum] + "!");
 		
 		getPrizes(prizes[randNum]);
-		System.out.println("Your inventory is now looks like this!");
+		System.out.println("Your inventory now looks like this!");
 		showPrizes();
 	}
 
@@ -197,7 +197,7 @@ public class GraveyardDig extends HauntedCarnival {
 				}
 			}
 		} else {
-			System.out.println("You dig into your pockets and only find $" + getMoney() + "...");
+			System.out.println("You dig into your pockets and only find $" + displayMoney() + "...");
 			System.out.println("Nevermind.");
 			return false;
 		}
