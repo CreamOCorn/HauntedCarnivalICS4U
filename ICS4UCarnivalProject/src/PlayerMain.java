@@ -17,13 +17,14 @@ public class PlayerMain {
 		
 		//initialize the HauntedCarnival using the parameter of how much money they're bringing
 		System.out.println("You sift through your clothes...");
-		System.out.println("How much money do you find in your pocket?");
+		System.out.print("How much money do you find in your pocket?\n$ ");
 		money = input.nextDouble();
-		HauntedCarnival c = new HauntedCarnival(money);
+		Player p1 = new Player (money);
+		System.out.println(p1);
 		
 		while (!userChoice.equals("9")) { 
 			System.out.println("-----------------------------------------------");
-			System.out.println("Where would you like to go now?\n"
+			System.out.println("Where would you like to go?\n"
 					+ "1) Roulette\n"
 					+ "2) Graveyard Dig\n"
 					+ "3) Haunted Maze\n"
@@ -36,14 +37,14 @@ public class PlayerMain {
 			System.out.println();
 			
 			if (userChoice.equals("1") || userChoice.equalsIgnoreCase("Roulette")) {
-				Roulette roulette = new Roulette();
-				
-				System.out.println("You make your way to the roulette stand. [Press Enter to Continue]");
-				input.nextLine();
-				roulette.playRoulette();
-				System.out.println("\nYou exit the stand the walk back to the main area...");
+//				Roulette roulette = new Roulette();
+//				
+//				System.out.println("You make your way to the roulette stand. [Press Enter to Continue]");
+//				input.nextLine();
+//				roulette.playRoulette();
+//				System.out.println("\nYou exit the stand the walk back to the main area...");
 			} else if (userChoice.equals("2") || userChoice.equalsIgnoreCase("Graveyard Dig")) {
-				GraveyardDig gd = new GraveyardDig();
+				GraveyardDig gd = new GraveyardDig(p1);
 				
 				System.out.println("The graveyeard digging site is fully packed. [Press Enter to Continue]");
 				input.nextLine();
@@ -64,26 +65,26 @@ public class PlayerMain {
 				System.out.println("You unfold the menu...");
 				
 			} else if (userChoice.equals("5") || userChoice.equalsIgnoreCase("Prize Stand")) {
-				PrizeStand prizestand = new PrizeStand ();
-				
-				String choice;
-				System.out.println("A huge stand showcasing plushies, toys, and candies lights up the whole park. [Press Enter to Continue]");
-				input.nextLine();
-				System.out.println("\"Please help yourself to anything here!\" says a person with a hat as large as their grin.\n");
-				System.out.println("1) Use tickets to purchase a plushy\n"
-				 				+ "2) Go to the ATM Machine");
-				
-				choice = input.nextLine();
-				
-				if (choice == "1") {
-					prizestand.toys();
-				} else if (choice == "2") {
-					prizestand.moneyAsk();
-				}
-				
+//				PrizeStand prizestand = new PrizeStand ();
+//				
+//				String choice;
+//				System.out.println("A huge stand showcasing plushies, toys, and candies lights up the whole park. [Press Enter to Continue]");
+//				input.nextLine();
+//				System.out.println("\"Please help yourself to anything here!\" says a person with a hat as large as their grin.\n");
+//				System.out.println("1) Use tickets to purchase a plushy\n"
+//				 				+ "2) Go to the ATM Machine");
+//				
+//				choice = input.nextLine();
+//				
+//				if (choice == "1") {
+//					prizestand.toys();
+//				} else if (choice == "2") {
+//					prizestand.moneyAsk();
+//				}
+//				
 			} else if (userChoice.equals("6") || userChoice.toLowerCase().contains("inventory")) {
 				System.out.println("You unzip your bag...\n");
-				System.out.println(c);
+				System.out.println(p1);
 			} else if (userChoice.equals("9") || userChoice.toLowerCase().contains("leave") || userChoice.toLowerCase().contains("home")) {
 				System.out.println("You stretch as you decide to wrap up for the day. [Press Enter to Continue]");
 				input.nextLine();
@@ -102,17 +103,13 @@ public class PlayerMain {
 		input.nextLine();
 		System.out.println("The fog surrounds you, concealing the ground beneath your feet... [Press Enter to Continue]");
 		input.nextLine();
-		System.out.println("The lights calls to you through the thick of the smoke. You feel drawn to it... [Press Enter to Continue]");
-		input.nextLine();
 		System.out.println("The flourescent bulbs of the billboard sign flicker... [Press Enter to Continue]");
 		input.nextLine();
 		System.out.println("You look up to see five words in bold letters before you... [Press Enter to Continue]");
 		input.nextLine();
 		System.out.println("\"WELCOME TO THE HAUNTED CARNIVAL!\" [Press Enter to Continue]");
 		input.nextLine();
-		System.out.println("You enter the gate, greeted by ghosts, ghouls, and witches all around. [Press Enter to Continue]");
-		input.nextLine();
-		System.out.println("Attractions left and right all catch your eye. [Press Enter to Continue]");
+		System.out.println("You enter the gate. Attractions left and right all catch your eye. [Press Enter to Continue]");
 		input.nextLine();
 	}
 
