@@ -31,7 +31,7 @@ public class Roulette extends HauntedCarnival {
 					if(num <= 10) {
 						
 						System.out.println("\nYou've won 10'000 tickets!!! Congratulations!!!\n");
-						super.addTickets(10000);
+						super.addTickets(10000); ; //I think that we don't need to do the super.addTickets! Because the money variable is already interited, therefore money+= works here i think... - An
 						
 					} else if(num > 10 && num <= 1000) {
 						
