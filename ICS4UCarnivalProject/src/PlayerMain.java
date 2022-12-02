@@ -36,12 +36,12 @@ public class PlayerMain {
 			System.out.println();
 			
 			if (userChoice.equals("1") || userChoice.equalsIgnoreCase("Roulette")) {
-//				Roulette roulette = new Roulette();
-//				
-//				System.out.println("You make your way to the roulette stand. [Press Enter to Continue]");
-//				input.nextLine();
-//				roulette.playRoulette();
-//				System.out.println("\nYou exit the stand the walk back to the main area...");
+				Roulette roulette = new Roulette(p1);
+				
+				System.out.println("You make your way to the roulette stand. [Press Enter to Continue]");
+				input.nextLine();
+				roulette.playRoulette();
+				System.out.println("\nYou exit the stand the walk back to the main area...");
 			} else if (userChoice.equals("2") || userChoice.equalsIgnoreCase("Graveyard Dig")) {
 				GraveyardDig gd = new GraveyardDig(p1);
 				
