@@ -10,18 +10,23 @@ import java.util.Scanner;
 
 
 public class GraveyardDig extends HauntedCarnival {
-	private int dimensions = 7;
+	//variables
+	private int dimensions = 7; //makes sure the cartesian plane is a 5x5 (extra 2 spots for axis)
 	private String[][] plane; 
 	private int xValue;
 	private int yValue;
 	
+	//constructor
 	public GraveyardDig (Player p) {
 		super(p);
-		plane = new String [dimensions][dimensions]; //the cartesian plane is initially a 5x5 2D array
+		plane = new String [dimensions][dimensions]; //the cartesian plane 
 		xValue = 0;
 		yValue = 0;
 	}
 	  
+	/* Pre: Null
+	 * Post: Void
+	 * Action: Offers instructions to the user of how to play*/
 	public void intro () {
 		Scanner input = new Scanner (System.in);
 		String review = "";
@@ -42,6 +47,9 @@ public class GraveyardDig extends HauntedCarnival {
 		}
 	}
 
+	/* Pre: Null
+	 * Post: Void
+	 * Action: Establishes the grid pattern in the 2D array*/
 	public void fillPlane () {
 		//fill the entire thing with a grid
 		for (int i = 0; i < dimensions; i++) {
@@ -75,6 +83,9 @@ public class GraveyardDig extends HauntedCarnival {
 		}
 	}
 	
+	/* Pre: Null
+	 * Post: Void
+	 * Action: Displays the cartesian plane*/
 	public void displayPlane () {
 		//print out the y axis alongside the cartesian plane (backwards so numbers descend down)
 		for (int i = dimensions-3; i >= 0; i--) {
@@ -97,6 +108,9 @@ public class GraveyardDig extends HauntedCarnival {
 		System.out.println("\n");
 	}
 	
+	/* Pre: Null
+	 * Post: Void
+	 * Action: Allows the user to choose a spot to "dig"*/
 	public void chooseDigSpot () {
 		//variable declaration
 		int value = 0;
@@ -125,6 +139,9 @@ public class GraveyardDig extends HauntedCarnival {
 		System.out.println();
 	}
 	
+	/* Pre: Null
+	 * Post: Void
+	 * Action: Allows the user to "dig" and determines if they win something from it*/
 	public void dig () {
 		System.out.println("You sink your shovel into plot (" + xValue  + "," + yValue + ")...\n");
 		if (plane[yValue-1][xValue-1] == "███") {
@@ -150,6 +167,9 @@ public class GraveyardDig extends HauntedCarnival {
 		System.out.println();
 	}
 	
+	/* Pre: Null
+	 * Post: Void
+	 * Action: Determines a random prize for the user to win*/
 	public void winPrize () {
 		String[] prizes = {"Stuffed Bear", "Lollipop", "Lucky Charm", "Bone", "Smol Lil Baybie Kitten"};
 		Random rand = new Random();
@@ -164,6 +184,9 @@ public class GraveyardDig extends HauntedCarnival {
 		showPrizes();
 	}
 
+	/* Pre: Null
+	 * Post: Void
+	 * Action: Determines a random number of tickets for the user to win*/
 	public void winTix () {
 		int[] tixAmount = {5, 10, 20, 50, 100};
 		Random rand = new Random();
@@ -178,6 +201,9 @@ public class GraveyardDig extends HauntedCarnival {
 		System.out.println("You now have " + getTix() + " tickets in total!");
 	}
 	
+	/* Pre: Null
+	 * Post: Boolean
+	 * Action: Determines if the user can play the game or not*/
 	public boolean pay () {
 		Scanner input = new Scanner(System.in);
 		String pay = "";
@@ -204,6 +230,9 @@ public class GraveyardDig extends HauntedCarnival {
 		return true;
 	}
 
+	/* Pre: Null
+	 * Post: Void
+	 * Action: Utilizes all method to allow users to play the game*/
 	public void playGD() {
 		boolean canPlay = pay();
 		if (canPlay) {
