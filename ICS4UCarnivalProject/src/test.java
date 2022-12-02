@@ -8,12 +8,13 @@ public class test {
 		int money = 100;
 		Player a = new Player(money);
 		Roulette b = new Roulette(a);
+		CursedConsumables c = new ghastlyFoods(a);
 		
 		
 		a.addInventory("beer");
 		a.addInventory("tea");
 		
-		b.playRoulette();
+		,,
 		
 		System.out.println(a);
 
