@@ -42,6 +42,11 @@ public class Player {
             }
         }
     }
+    
+    public String displayMoney() {
+        return decimal.format(money);
+    }
+    
 //Should we put this into the prize stand instead? - An
     public void convertToTickets() {
 

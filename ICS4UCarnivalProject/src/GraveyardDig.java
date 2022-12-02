@@ -170,7 +170,7 @@ public class GraveyardDig extends HauntedCarnival {
 	/* Pre: Null
 	 * Post: Void
 	 * Action: Determines a random prize for the user to win*/
-	public void winPrize () {
+	public void winPrizes () {
 		String[] prizes = {"Stuffed Bear", "Lollipop", "Lucky Charm", "Bone", "Smol Lil Baybie Kitten"};
 		Random rand = new Random();
 		int randNum;
@@ -223,13 +223,16 @@ public class GraveyardDig extends HauntedCarnival {
 				}
 			}
 		} else {
-			System.out.println("You dig into your pockets and only find " + decimal.format(p.money) + "...");
+			System.out.println("You dig into your pockets and only find " +  p.displayMoney() + "...");
 			System.out.println("Nevermind.");
 			return false;
 		}
 		return true;
 	}
 	
+	/* Pre: Null
+	 * Post: Void
+	 * Action: Subtracts 5 dollars from the player*/
 	public void pay () {
 		p.money -=5;
 	}

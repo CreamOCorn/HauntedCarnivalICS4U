@@ -5,11 +5,8 @@
  *about the money, tickets, and inventories of players in the carnival.
  */
 
-import java.text.NumberFormat;
-
 public abstract class HauntedCarnival {
 	//variable declaration
-	NumberFormat decimal = NumberFormat.getCurrencyInstance();
 	protected Player p;
 	
 	//constructor
