@@ -1,6 +1,3 @@
-import java.util.Random;
-import java.util.Scanner;
-
 /*Author: An Ha
  *Date: December 4, 2022
  *Course: ICS4U
@@ -8,14 +5,18 @@ import java.util.Scanner;
  *where users can uncover prizes by digging points a coordinate grid.
  */
 
+import java.util.Random;
+import java.util.Scanner;
+
+
 public class GraveyardDig extends HauntedCarnival {
 	private int dimensions = 7;
 	private String[][] plane; 
 	private int xValue;
 	private int yValue;
 	
-	public GraveyardDig () {
-		super(money);
+	public GraveyardDig (Player p) {
+		super(p);
 		plane = new String [dimensions][dimensions]; //the cartesian plane is initially a 5x5 2D array
 		xValue = 0;
 		yValue = 0;
@@ -125,7 +126,7 @@ public class GraveyardDig extends HauntedCarnival {
 	}
 	
 	public void dig () {
-		System.out.println("You sink your shovel into plot (" + xValue  + "," + yValue + ")...");
+		System.out.println("You sink your shovel into plot (" + xValue  + "," + yValue + ")...\n");
 		if (plane[yValue-1][xValue-1] == "███") {
 			System.out.println("\nYou already tried digging here so you just kinda dig... a deeper hole...\n");
 		} else {
@@ -158,9 +159,9 @@ public class GraveyardDig extends HauntedCarnival {
 		
 		System.out.println("You dug up... a " + prizes[randNum] + "!");
 		
-		addInventory(prizes[randNum]);
-		System.out.println("Your inventory is now looks like this!");
-		showInventory();
+		getPrizes(prizes[randNum]);
+		System.out.println("Your inventory now looks like this!");
+		showPrizes();
 	}
 
 	public void winTix () {
@@ -172,9 +173,9 @@ public class GraveyardDig extends HauntedCarnival {
 		
 		System.out.println("You dug up... " + tixAmount[randNum] + " tickets!");
 		
-		tickets += tixAmount[randNum];
+		gainTix(tixAmount[randNum]);
 		
-		System.out.println("You now have " + tickets + " tickets in total!");
+		System.out.println("You now have " + getTix() + " tickets in total!");
 	}
 	
 	public boolean pay () {
@@ -182,12 +183,12 @@ public class GraveyardDig extends HauntedCarnival {
 		String pay = "";
 
 		System.out.println("The sign says that the fee to play is $5...");
-		if (money >= 5) {
+		if (getMoney() >= 5) {
 			while (!pay.contains("y") && !pay.contains("n")) {
 				System.out.println("Would you like to pay the fee and play? (Y/N)");
 				pay = input.nextLine().toLowerCase();
 				if (pay.contains("y")) {
-					money -= 5;
+					loseMoney(5);
 					return true;
 				} else if (pay.contains("n")) {
 					return false;
@@ -196,7 +197,7 @@ public class GraveyardDig extends HauntedCarnival {
 				}
 			}
 		} else {
-			System.out.println("You dig into your pockets and only find $" + money + "...");
+			System.out.println("You dig into your pockets and only find $" + displayMoney() + "...");
 			System.out.println("Nevermind.");
 			return false;
 		}
@@ -210,7 +211,7 @@ public class GraveyardDig extends HauntedCarnival {
 			fillPlane();
 			intro();
 			displayPlane();
-			 
+			
 			for (int i = 1; i < 6; i++) {
 				System.out.println("Try #" + i + "!");
 				chooseDigSpot();

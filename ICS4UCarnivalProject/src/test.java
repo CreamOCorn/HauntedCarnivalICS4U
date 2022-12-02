@@ -6,23 +6,17 @@ public class test {
 
 		String[] aa = new String[0];
 		int money = 100;
-		PrizeStand a = new PrizeStand(money, aa);
+		Player a = new Player(money);
+		Roulette b = new Roulette(a);
 		
 		
-		a.addInventory(a.getInventoryArray(), "beer");
-		a.addInventory(a.getInventoryArray(), "tea");
-
+		a.addInventory("beer");
+		a.addInventory("tea");
+		
+		b.playRoulette();
 		
 		System.out.println(a);
-		
 
-		
-		System.out.println(a.getMoney());
-		System.out.println(a.getTickets());
-		
-		
-		
-		a.toys(null);
 	}
 
 }

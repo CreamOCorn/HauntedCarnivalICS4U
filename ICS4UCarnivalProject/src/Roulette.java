@@ -3,9 +3,9 @@ import java.util.*;
 
 public class Roulette extends HauntedCarnival {
 	
-	public Roulette(double money1, String[] inventory1) {
+	public Roulette(Player player) {
 		
-		super(money1, inventory1);
+		super(player);
 		
 	}
 	
@@ -31,34 +31,34 @@ public class Roulette extends HauntedCarnival {
 					if(num <= 10) {
 						
 						System.out.println("\nYou've won 10'000 tickets!!! Congratulations!!!\n");
-						super.addTickets(10000); ; //I think that we don't need to do the super.addTickets! Because the money variable is already interited, therefore money+= works here i think... - An
+						super.gainTix(10000);
 						
 					} else if(num > 10 && num <= 1000) {
 						
 						System.out.println("\nYou've won 1'000 tickets!!! Congratulations!!!\n");
-						super.addTickets(1000);
+						super.gainTix(1000);
 						
 					} else if(num > 1000 && num <= 100000) {
 						
 						System.out.println("\nYou've won 100 tickets! Congratulations!!!\n");
-						super.addTickets(100);
+						super.gainTix(100);
 						
 					} else if(num == 578439) {
 						
 						System.out.println("\nCONGRATULATIONS!!! YOU ARE NOW A MILLIONAIRE!!! YOU HAVE WON 1'000'000 TICKETS!!!\n");
-						super.addTickets(1000000);
+						super.gainTix(1000000);
 						
 					} else if(num > 100000 && num <= 500000){
 						
 						System.out.println("\nYou've won 20 tickets.\n");
-						super.addTickets(20);
+						super.gainTix(20);
 						
 					} else {
 						
 						System.out.println("\nYou lost :(\n");
 					}
 					
-					super.setMoney(super.getMoney() - 5); 
+					super.gainMoney(-5);
 					
 					System.out.println("Would you like to play again? (Enter \"y\" or \"n\")");
 					ans = input.next();
@@ -72,7 +72,7 @@ public class Roulette extends HauntedCarnival {
 				
 			} else if(ans.equals("n")){
 				
-				System.out.println("To bad you don't want to gamble away money :(");
+				System.out.println("Too bad you don't want to gamble away money :(");
 				
 			} else {
 				
@@ -86,7 +86,7 @@ public class Roulette extends HauntedCarnival {
 		}
 		if(ans.equals("n")) {
 			
-			System.out.println("To bad you don't want to gamble away money :(");
+			System.out.println("Too bad you don't want to gamble away money :(");
 		}
 	}
 }
