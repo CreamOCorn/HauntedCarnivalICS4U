@@ -1,3 +1,9 @@
+/*Author: Serge
+ *Date: December 4, 2022
+ *Course: ICS4U
+ *Description: 
+ */
+
 import java.text.NumberFormat;
 import java.util.*;
 

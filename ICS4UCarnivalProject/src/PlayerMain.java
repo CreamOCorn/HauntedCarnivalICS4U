@@ -9,11 +9,11 @@ import java.util.Scanner;
 public class PlayerMain {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		//variable declaration
 		String userChoice = "0";
 		Scanner input = new Scanner(System.in);
 		double money;
-		//printIntro(input);
+		printIntro(input);
 		
 		//initialize the HauntedCarnival using the parameter of how much money they're bringing
 		System.out.println("You sift through your clothes...");
@@ -21,9 +21,10 @@ public class PlayerMain {
 		money = input.nextDouble();
 		Player p1 = new Player (money);
 		
+		//the menu!
 		while (!userChoice.equals("9")) { 
 			System.out.println("-----------------------------------------------");
-			System.out.println("Where would you like to go?\n"
+			System.out.println("What would you like to do?\n"
 					+ "1) Roulette\n"
 					+ "2) Graveyard Dig\n"
 					+ "3) Haunted Maze\n"
@@ -31,29 +32,31 @@ public class PlayerMain {
 					+ "5) Prize Stand\n\n"
 					+ "6) Check your inventory\n"
 					+ "9) Leave the carnival and go home");
-			input = new Scanner (System.in);
+			input = new Scanner (System.in); //refresh the scanner
 			userChoice = (input.nextLine());
 			System.out.println();
 			
+			//choose from menu
 			if (userChoice.equals("1") || userChoice.equalsIgnoreCase("Roulette")) {
+				//start an instance of Roulette
 				Roulette roulette = new Roulette(p1);
 				
 				System.out.println("You make your way to the roulette stand. [Press Enter to Continue]");
 				input.nextLine();
-				roulette.playRoulette();
+				roulette.playRoulette(); //play the game
 				System.out.println("\nYou exit the stand the walk back to the main area...");
 			} else if (userChoice.equals("2") || userChoice.equalsIgnoreCase("Graveyard Dig")) {
+				//start an instance of Graveyard Dig
 				GraveyardDig gd = new GraveyardDig(p1);
 				
 				System.out.println("The graveyeard digging site is fully packed. [Press Enter to Continue]");
 				input.nextLine();
-				gd.playGD();
+				gd.playGD(); //play the game
 				System.out.println("\nYou leave the grave site and then make your way back to the park...");
 			} else if (userChoice.equals("3") || userChoice.equalsIgnoreCase("Haunted Maze")) {
 				System.out.println("The sounds of screams from the hounted maze intruiges you. [Press Enter to Continue]");
 				input.nextLine();
 			} else if (userChoice.equals("4") || userChoice.equalsIgnoreCase("Devilish Diner")) {
-				
 				
 				System.out.println("Your stomach grumbles as you go to the Devilish Diner for a quick bite. [Press Enter to Continue]");
 				input.nextLine();
@@ -62,6 +65,8 @@ public class PlayerMain {
 				System.out.println("\"Hello there customer. What shall I serve you on this spooky evening...?\" [Press Enter to Continue]");
 				input.nextLine();
 				System.out.println("You unfold the menu...");
+				
+				//CursedConsumables[] order = order();
 				
 			} else if (userChoice.equals("5") || userChoice.equalsIgnoreCase("Prize Stand")) {
 //				PrizeStand prizestand = new PrizeStand ();
@@ -83,7 +88,7 @@ public class PlayerMain {
 //				
 			} else if (userChoice.equals("6") || userChoice.toLowerCase().contains("inventory")) {
 				System.out.println("You unzip your bag...\n");
-				System.out.println(p1);
+				System.out.println(p1); //print the player's money, tickets, and inventory information
 			} else if (userChoice.equals("9") || userChoice.toLowerCase().contains("leave") || userChoice.toLowerCase().contains("home")) {
 				System.out.println("You stretch as you decide to wrap up for the day. [Press Enter to Continue]");
 				input.nextLine();
@@ -97,6 +102,9 @@ public class PlayerMain {
 		
 	}
 	
+	/* Pre: Scanner input
+	 * Post: void
+	 * Action: Allows the user to interact with the opening sequence, introducing the park*/
 	public static void printIntro(Scanner input) {
 		System.out.println("You exit your car on a misty October night... [Press Enter to Continue]");
 		input.nextLine();
