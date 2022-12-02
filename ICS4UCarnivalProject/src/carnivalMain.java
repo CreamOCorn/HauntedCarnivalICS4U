@@ -10,17 +10,46 @@ public class carnivalMain {
 
 	public static void main(String[] args) {
 		//variable declaration
-		String userChoice = "0";
-		Scanner input = new Scanner(System.in);
 		double money;
-		printIntro(input);
+		Scanner input = new Scanner(System.in);
 		
-		//initialize the HauntedCarnival using the parameter of how much money they're bringing
+		//print the opening sequence
+		//printIntro(input);
+		
+		//initialize the player's stats using the parameter of how much money they're bringing
 		System.out.println("You sift through your clothes...");
 		System.out.print("How much money do you find in your pocket?\n$ ");
 		money = input.nextDouble();
 		Player p1 = new Player (money);
 		
+		//the program's main star, the menu
+		loopMenu(input, p1);
+	}
+	
+	/* Pre: Scanner input
+	 * Post: void
+	 * Action: Allows the user to interact with the opening sequence, introducing the park's ambience*/
+	public static void printIntro(Scanner input) {
+		System.out.println("You exit your car on a misty October night... [Press Enter to Continue]");
+		input.nextLine();
+		System.out.println("The fog surrounds you, concealing the ground beneath your feet... [Press Enter to Continue]");
+		input.nextLine();
+		System.out.println("The flourescent bulbs of the billboard sign flicker... [Press Enter to Continue]");
+		input.nextLine();
+		System.out.println("You look up to see five words in bold letters before you... [Press Enter to Continue]");
+		input.nextLine();
+		System.out.println("\"WELCOME TO THE HAUNTED CARNIVAL!\" [Press Enter to Continue]");
+		input.nextLine();
+		System.out.println("You enter the gate. Attractions left and right all catch your eye. [Press Enter to Continue]");
+		input.nextLine();
+	}
+
+	/* Pre: Scanner input
+	 * Post: void
+	 * Action: Prints the menu and allows the user to go to each 
+	 * attraction based on their input, looping until they decide to exit*/
+	public static void loopMenu(Scanner input, Player p1) {
+		String userChoice = "0";
 		//the menu!
 		while (!userChoice.equals("9")) { 
 			System.out.println("-----------------------------------------------");
@@ -100,24 +129,6 @@ public class carnivalMain {
 			}
 		}
 		
-	}
-	
-	/* Pre: Scanner input
-	 * Post: void
-	 * Action: Allows the user to interact with the opening sequence, introducing the park*/
-	public static void printIntro(Scanner input) {
-		System.out.println("You exit your car on a misty October night... [Press Enter to Continue]");
-		input.nextLine();
-		System.out.println("The fog surrounds you, concealing the ground beneath your feet... [Press Enter to Continue]");
-		input.nextLine();
-		System.out.println("The flourescent bulbs of the billboard sign flicker... [Press Enter to Continue]");
-		input.nextLine();
-		System.out.println("You look up to see five words in bold letters before you... [Press Enter to Continue]");
-		input.nextLine();
-		System.out.println("\"WELCOME TO THE HAUNTED CARNIVAL!\" [Press Enter to Continue]");
-		input.nextLine();
-		System.out.println("You enter the gate. Attractions left and right all catch your eye. [Press Enter to Continue]");
-		input.nextLine();
 	}
 
 }

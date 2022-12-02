@@ -50,7 +50,7 @@ public class GraveyardDig extends HauntedCarnival {
 	/* Pre: Null
 	 * Post: Void
 	 * Action: Establishes the grid pattern in the 2D array*/
-	public void fillPlane () {
+	private void fillPlane () {
 		//fill the entire thing with a grid
 		for (int i = 0; i < dimensions; i++) {
 			for (int j = 0; j < dimensions; j++) {
@@ -110,7 +110,7 @@ public class GraveyardDig extends HauntedCarnival {
 	
 	/* Pre: Null
 	 * Post: Void
-	 * Action: Allows the user to choose a spot to "dig"*/
+	 * Action: Allows the user to choose a spot to "dig" by getting the x and y value of the coordinate*/
 	public void chooseDigSpot () {
 		//variable declaration
 		int value = 0;
@@ -179,9 +179,9 @@ public class GraveyardDig extends HauntedCarnival {
 		
 		System.out.println("You dug up... a " + prizes[randNum] + "!");
 		
-		getPrizes(prizes[randNum]);
+		p.addInventory(prizes[randNum]);
 		System.out.println("Your inventory now looks like this!");
-		showPrizes();
+		p.showInventory();
 	}
 
 	/* Pre: Null
@@ -196,25 +196,25 @@ public class GraveyardDig extends HauntedCarnival {
 		
 		System.out.println("You dug up... " + tixAmount[randNum] + " tickets!");
 		
-		gainTix(tixAmount[randNum]);
+		p.tickets += (tixAmount[randNum]);
 		
-		System.out.println("You now have " + getTix() + " tickets in total!");
+		System.out.println("You now have " + p.tickets + " tickets in total!");
 	}
 	
 	/* Pre: Null
 	 * Post: Boolean
-	 * Action: Determines if the user can play the game or not*/
-	public boolean pay () {
+	 * Action: Determines if the user will play the game or not*/
+	public boolean checkPlayersMoney () {
 		Scanner input = new Scanner(System.in);
 		String pay = "";
 
 		System.out.println("The sign says that the fee to play is $5...");
-		if (getMoney() >= 5) {
+		if (p.money >= 5) {
 			while (!pay.contains("y") && !pay.contains("n")) {
 				System.out.println("Would you like to pay the fee and play? (Y/N)");
 				pay = input.nextLine().toLowerCase();
 				if (pay.contains("y")) {
-					loseMoney(5);
+					pay();
 					return true;
 				} else if (pay.contains("n")) {
 					return false;
@@ -223,18 +223,22 @@ public class GraveyardDig extends HauntedCarnival {
 				}
 			}
 		} else {
-			System.out.println("You dig into your pockets and only find $" + displayMoney() + "...");
+			System.out.println("You dig into your pockets and only find " + decimal.format(p.money) + "...");
 			System.out.println("Nevermind.");
 			return false;
 		}
 		return true;
+	}
+	
+	public void pay () {
+		p.money -=5;
 	}
 
 	/* Pre: Null
 	 * Post: Void
 	 * Action: Utilizes all method to allow users to play the game*/
 	public void playGD() {
-		boolean canPlay = pay();
+		boolean canPlay = checkPlayersMoney();
 		if (canPlay) {
 			System.out.println("You stand over a plot of land, looking up to a board that shows the rules.");
 			fillPlane();
