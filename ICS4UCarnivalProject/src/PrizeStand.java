@@ -1,18 +1,14 @@
 import java.util.*;
 
-public class PrizeStand extends HauntedCarnival {
+public class PrizeStand {
 	
+	private Player p;
 	
-
-	public PrizeStand(int money1, String[] inventory1) {
-		
-		super(money1, inventory1);
+	public PrizeStand(Player player) {
+		p = player;
 	}
-
 	
-
-	
-	public void moneyAsk(int money1) {
+	public void moneyAsk() {
 
 		Random rand = new Random();
 		Scanner sc = new Scanner(System.in);
@@ -29,9 +25,9 @@ public class PrizeStand extends HauntedCarnival {
 			
 			if(randInput == 1) {
 				System.out.println("\nCongrats your mom said yes, you have now been given 100 more dollars!");
-				money1 = money1 + 100; 
+				p.money += 100; 
 				
-				System.out.println("\nYou have: " + super.getMoney() + " dollars!");
+				System.out.println("\nYou have: " + p.displayMoney() + " dollars!");
 			}else {
 				System.out.println("\nYour mom said no, you have been given no money!");
 			}
@@ -79,7 +75,7 @@ public class PrizeStand extends HauntedCarnival {
 						+ "⠀⠀⠀⠀⠉⠁⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀");
 					
 			
-				super.addInventory(super.getInventoryArray(), "panda");
+				p.addInventory("panda");
 			
 				System.out.println(panda);
 				
@@ -100,7 +96,7 @@ public class PrizeStand extends HauntedCarnival {
 								+ "⠀⠀⡇⠀⠀⢉⣙⣒⣒⣒⣚⣉⠁⠀⢣⡤⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 								+ "⠀⠀⠙⠒⠒⠚⠒⠋⠉⠉⠀⠈⠓⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
 				
-				super.addInventory(super.getInventoryArray(), "turtle");
+				p.addInventory("turtle");
 				
 				System.out.println(turtle);
 				
@@ -130,7 +126,7 @@ public class PrizeStand extends HauntedCarnival {
 						+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢐⣇⣀⣸⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
 
 				
-				super.addInventory(super.getInventoryArray(), "spider");
+				p.addInventory("spider");
 				
 				System.out.println(spider);
 			}else if(plushChoice == 4) {
@@ -162,7 +158,7 @@ public class PrizeStand extends HauntedCarnival {
 						+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠳⣄⣀⣀⡤⠖⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠒⠒⠋⠁⠀⠀\r\n"
 						+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
 				
-				super.addInventory(super.getInventoryArray(), "pumpkin");
+				p.addInventory("pumpkin");
 				
 				System.out.println(pumpkin);
 				
@@ -198,7 +194,7 @@ public class PrizeStand extends HauntedCarnival {
 						+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠛⠿⠿⠿⠿⠿⠿⠿⠿⠿⠛⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
 
 				
-				super.addInventory(super.getInventoryArray(), "ghost");
+				p.addInventory("ghost");
 				
 				System.out.println(ghost);
 			}
