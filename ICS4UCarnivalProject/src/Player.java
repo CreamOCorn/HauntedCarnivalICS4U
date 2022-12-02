@@ -1,4 +1,4 @@
-/*Author: Serge
+/*Author: Serge Shpolskyy
  *Date: December 4, 2022
  *Course: ICS4U
  *Description: 

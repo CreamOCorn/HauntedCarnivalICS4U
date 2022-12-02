@@ -1,7 +1,8 @@
 /*Author: An Ha
  *Date: December 4, 2022
  *Course: ICS4U
- *Description: The class can add, subtract, and return information about players in the carnival.
+ *Description: The class can add, subtract, and return information 
+ *about the money, tickets, and inventories of players in the carnival.
  */
 
 import java.text.NumberFormat;
