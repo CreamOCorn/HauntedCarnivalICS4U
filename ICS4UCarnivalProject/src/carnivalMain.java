@@ -101,34 +101,36 @@ public class carnivalMain {
 				choice = input.nextLine();
 				
 				while (!choice.equals("1") && !choice.equals("2")) {
-					if (choice == "1") {
-						ghastlyFood gf = new ghastlyFood(p1);
-						gf.userFoods();
-						gf.order();
-					} else if (choice == "2") {
-						HellboundDrinks gf = new HellboundDrinks(p1);
-						gf.userDrinks();
-						gf.order();
-					} else {
-						System.out.println("That doesn't seem to exist at the food court.");
-					}
+//					if (choice == "1") {
+//						ghastlyFood gf = new ghastlyFood(p1);
+//						gf.userFoods();
+//						gf.order();
+//					} else if (choice == "2") {
+//						HellboundDrinks gf = new HellboundDrinks(p1);
+//						gf.userDrinks();
+//						gf.order();
+//					} else {
+//						System.out.println("That doesn't seem to exist at the food court.");
+//					}
 				}
 			} else if (userChoice.equals("5") || userChoice.equalsIgnoreCase("Prize Stand")) {
+				//start an instance of a Prize Stand
 				PrizeStand prizestand = new PrizeStand (p1);
 				
-				String choice;
-				System.out.println("A huge stand showcasing plushies, toys, and candies lights up the whole park. [Press Enter to Continue]");
+				String choice = "";
+				System.out.println("A huge stand showcasing plushiess lights up the whole park. [Press Enter to Continue]");
 				input.nextLine();
 				System.out.println("\"Please help yourself to anything here!\" says a person with a hat as large as their grin.\n");
-				System.out.println("1) Use tickets to purchase a plushy\n"
-				 				+ "2) Go to the ATM Machine");
 				
-				choice = input.nextLine();
-				
+				//menu for the user to play around with the prize stand
 				while (!choice.equals("1") && !choice.equals("2")) {
-					if (choice == "1") {
+					System.out.println("1) Purchase a plushy\n"
+					 				+ "2) Go to the ATM Machine");
+					
+					choice = input.nextLine();
+					if (choice.equals("1")) {
 						prizestand.toys();
-					} else if (choice == "2") {
+					} else if (choice.equals("2")) {
 						prizestand.moneyAsk();
 					} else {
 						System.out.println("That doesn't seem to exist at the prize stand.");
@@ -148,8 +150,6 @@ public class carnivalMain {
 			} else {
 				System.out.println("That attraction doesn't seem to exist. You look around again.");
 			}
-		}
-		
+		}	
 	}
-
 }

@@ -36,7 +36,7 @@ public class PrizeStand {
 		}
 	}
 	
-	public void toys(String inventory1) {
+	public void toys() {
 		
 		Random rand = new Random();
 		Scanner sc = new Scanner(System.in);
