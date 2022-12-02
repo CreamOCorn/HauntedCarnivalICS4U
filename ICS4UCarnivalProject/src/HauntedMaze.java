@@ -1,5 +1,5 @@
 
-public class HauntedMaze extends HauntedCarnival{
+public class HauntedMaze extends HauntedCarnivalGame{
 
 	
 	public HauntedMaze(double money1, String[] inventory1) {

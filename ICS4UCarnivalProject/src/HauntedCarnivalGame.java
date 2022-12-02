@@ -5,12 +5,12 @@
  *about the money, tickets, and inventories of players in the carnival.
  */
 
-public abstract class HauntedCarnival {
+public abstract class HauntedCarnivalGame {
 	//variable declaration
 	protected Player p;
 	
 	//constructor
-	public HauntedCarnival(Player player) {
+	public HauntedCarnivalGame(Player player) {
 		p = player;
 	}
 	

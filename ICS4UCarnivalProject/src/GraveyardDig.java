@@ -9,7 +9,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 
-public class GraveyardDig extends HauntedCarnival {
+public class GraveyardDig extends HauntedCarnivalGame {
 	//variables
 	private int dimensions = 7; //makes sure the cartesian plane is a 5x5 (extra 2 spots for axis)
 	private String[][] plane; 
