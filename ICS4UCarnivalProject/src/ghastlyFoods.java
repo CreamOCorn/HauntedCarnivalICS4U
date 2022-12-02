@@ -4,6 +4,14 @@ public class ghastlyFoods extends CursedConsumables{
 	
 	static ghastlyFoods [] foods = new ghastlyFoods [5];
 	
+	
+	String [] foods1 = {"Scorpion lollipops", "cricket lollopops", "chocolate fingers", "Devil’s Hair Pasta", "Zombie Burger" , "Pumpkin Pie"};
+	
+	
+	for(int i = 0; i<foods1.length; i++) {
+		
+	}
+	
 	public ghastlyFoods(String newName, double newPrice) {
 		super(newName, newPrice);
 		
