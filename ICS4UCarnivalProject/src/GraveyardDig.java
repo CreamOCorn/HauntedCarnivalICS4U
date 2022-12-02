@@ -158,7 +158,7 @@ public class GraveyardDig extends HauntedCarnival {
 		randNum = rand.nextInt(5);
 		
 		if (randNum == 0) {
-			winPrize();
+			winPrizes();
 		} else if (randNum == 1) {
 			winTix();
 		} else {

@@ -43,10 +43,6 @@ public class Player {
         }
     }
     
-    public String displayMoney() {
-        return decimal.format(money);
-    }
-    
 //Should we put this into the prize stand instead? - An
     public void convertToTickets() {
 
@@ -80,6 +76,10 @@ public class Player {
         input.close();
     }
 
+    public String displayMoney() {
+        return decimal.format(money);
+    }
+    
     public String toString() {
 
         String info = "Money: " + decimal.format(money) + "\nTickets: " + tickets + "\nInventory:";

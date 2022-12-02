@@ -14,7 +14,7 @@ public abstract class HauntedCarnival {
 		p = player;
 	}
 	
-	/* Pre: int tix
+	/* Pre: Null
 	 * Post: void
 	 * Action: Adds to the number of tickets a player has*/
 	public abstract void winTix ();

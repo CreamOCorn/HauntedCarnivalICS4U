@@ -87,34 +87,55 @@ public class carnivalMain {
 				input.nextLine();
 			} else if (userChoice.equals("4") || userChoice.equalsIgnoreCase("Devilish Diner")) {
 				
+				String choice;
 				System.out.println("Your stomach grumbles as you go to the Devilish Diner for a quick bite. [Press Enter to Continue]");
 				input.nextLine();
-				System.out.println("A vampire sees and leads you to a table in the dimly-lit restaurant. [Press Enter to Continue]");
+				System.out.println("A vampire sees and leads you to a jack-o-lantern-lit foodcourt. [Press Enter to Continue]");
 				input.nextLine();
-				System.out.println("\"Hello there customer. What shall I serve you on this spooky evening...?\" [Press Enter to Continue]");
-				input.nextLine();
-				System.out.println("You unfold the menu...");
+				System.out.println("On the left, a haunted-looking shack displays the the words \"Ghastly Foods\".");
+				System.out.println("On the right, a half-open pumption stand displays the the words \"Hellbound Drinks\".\n");
+
+				System.out.println("Where do you choose to go?\n"
+								+ "1) Ghastly Food\n"
+								+ "2) Hellbound Drinks");
+				choice = input.nextLine();
 				
-				//CursedConsumables[] order = order();
-				
+				while (!choice.equals("1") && !choice.equals("2")) {
+					if (choice == "1") {
+						ghastlyFood gf = new ghastlyFood(p1);
+						gf.userFoods();
+						gf.order();
+					} else if (choice == "2") {
+						HellboundDrinks gf = new HellboundDrinks(p1);
+						gf.userDrinks();
+						gf.order();
+					} else {
+						System.out.println("That doesn't seem to exist at the food court.");
+					}
+				}
 			} else if (userChoice.equals("5") || userChoice.equalsIgnoreCase("Prize Stand")) {
-//				PrizeStand prizestand = new PrizeStand ();
-//				
-//				String choice;
-//				System.out.println("A huge stand showcasing plushies, toys, and candies lights up the whole park. [Press Enter to Continue]");
-//				input.nextLine();
-//				System.out.println("\"Please help yourself to anything here!\" says a person with a hat as large as their grin.\n");
-//				System.out.println("1) Use tickets to purchase a plushy\n"
-//				 				+ "2) Go to the ATM Machine");
-//				
-//				choice = input.nextLine();
-//				
-//				if (choice == "1") {
-//					prizestand.toys();
-//				} else if (choice == "2") {
-//					prizestand.moneyAsk();
-//				}
-//				
+				PrizeStand prizestand = new PrizeStand (p1);
+				
+				String choice;
+				System.out.println("A huge stand showcasing plushies, toys, and candies lights up the whole park. [Press Enter to Continue]");
+				input.nextLine();
+				System.out.println("\"Please help yourself to anything here!\" says a person with a hat as large as their grin.\n");
+				System.out.println("1) Use tickets to purchase a plushy\n"
+				 				+ "2) Go to the ATM Machine");
+				
+				choice = input.nextLine();
+				
+				while (!choice.equals("1") && !choice.equals("2")) {
+					if (choice == "1") {
+						prizestand.toys();
+					} else if (choice == "2") {
+						prizestand.moneyAsk();
+					} else {
+						System.out.println("That doesn't seem to exist at the prize stand.");
+					}
+				}
+				
+				
 			} else if (userChoice.equals("6") || userChoice.toLowerCase().contains("inventory")) {
 				System.out.println("You unzip your bag...\n");
 				System.out.println(p1); //print the player's money, tickets, and inventory information
