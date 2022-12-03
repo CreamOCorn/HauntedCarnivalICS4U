@@ -27,7 +27,7 @@ public class Player {
     //Pre: Null
   	//Post: String[]
     //modifier method - adds items into inventory.
-    public String[] addInventory(String a) {//serge this method is absolute genius
+    public String[] addInventory(String a) {
 
         String[] newarr = new String[inventory.length + 1];
 
