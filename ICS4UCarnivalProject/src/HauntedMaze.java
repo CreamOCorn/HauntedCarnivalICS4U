@@ -133,11 +133,11 @@ public class HauntedMaze extends HauntedCarnivalGame{
 						System.out.println("You have tried 10 times, but weren't able to pick the code.\nMaybe something strong will do the work? Like a a crowbar\n\n(New Objective: Find the Crowbar)\n\n<Press enter to continue>");
 						input.nextLine();
 						input.nextLine();
-						System.out.println("You look up above your head and notice that one of the ceiling tiles is just a little bit ajar.\n<Press enter to loos closer>");
+						System.out.println("You look up above your head and notice that one of the ceiling tiles is just a little bit ajar.\n<Press enter to look closer>");
 						input.nextLine();
 						System.out.println("You look inside and see a crowbar there. You are lucky! \n<Press enter to continue>");
 						input.nextLine();
-						System.out.println("You smack the safe and it crack-opens.\nYou see a key with a form of the buthcers knife, which exactly fits the lock of the door.\n<Press enter to unlock the door>");
+						System.out.println("You smack the safe and it crack-opens.\nYou see a key with a form of the butcher's knife, which exactly fits the lock of the door.\n<Press enter to unlock the door>");
 						input.nextLine();
 						System.out.println("You have unlocked a door and now the Main door is unlocked as well. \n<Press enter to continue>");
 						input.nextLine();

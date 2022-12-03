@@ -83,8 +83,13 @@ public class carnivalMain {
 				gd.playGD(); //play the game
 				System.out.println("\nYou leave the grave site and then make your way back to the park...");
 			} else if (userChoice.equals("3") || userChoice.equalsIgnoreCase("Haunted Maze")) {
-				System.out.println("The sounds of screams from the hounted maze intruiges you. [Press Enter to Continue]");
+				//start an instance of Haunted Maze
+				HauntedMaze hm = new HauntedMaze(p1);
+				
+				System.out.println("The sounds of screams from the haunted maze intrigues you, taking you to its entrance. [Press Enter to Continue]");
 				input.nextLine();
+				hm.playMaze();
+				System.out.println("\nYou leave the maze and then make your way back to the park...");
 			} else if (userChoice.equals("4") || userChoice.equalsIgnoreCase("Devilish Diner")) {
 				
 				String choice;
