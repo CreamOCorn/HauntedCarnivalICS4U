@@ -25,7 +25,7 @@ public abstract class CursedConsumables {
 	public abstract void setPrice(double newPrice);
 	
 	   
-	public String[] InventoryFood(String a) {//serge this method is absolute genius
+	public String[] InventoryFood(String a) {
 
 	        String[] newarr = new String[inventoryFood.length + 1];
 

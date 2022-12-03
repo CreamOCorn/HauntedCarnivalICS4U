@@ -1,30 +1,14 @@
 import java.util.*;
 public class HellboundDrinks extends CursedConsumables{
 
-	static HellboundDrinks [] drinks = new HellboundDrinks[3];
 	
 	
+	private Player b;
 	
-	public HellboundDrinks(String newName, double newPrice){
-		super(newName, newPrice);
-		
+	public HellboundDrinks(Player player) {
+		b = player;
 	}
 	
-	public String getName() { 
-		return name;
-	}
-	
-	public void setName(String newName) {
-		name  = newName;
-	}
-	
-	public double getPrice() {
-		return price;
-	}
-	
-	public void setPrice(double newPrice) {
-		price = newPrice;
-	}
 	
 	public void userDrinks() {
 		
@@ -64,11 +48,11 @@ public class HellboundDrinks extends CursedConsumables{
 		
 	if(mainChoice == 1) {	
 		System.out.println("The drink you have chosen is: " + HellboundDrinks[0]);
-		super.InventoryFood(HellboundDrinks[0]);
+		b.addInventory(HellboundDrinks[0]);
 		
 	}else if(mainChoice == 2) {
 		System.out.println("The drink you have chosen is: " + HellboundDrinks[1]);
-		super.InventoryFood(HellboundDrinks[0]);
+		b.addInventory(HellboundDrinks[1]);
 		
 	}else if(mainChoice == 3) {
 		System.out.println("Going back to the Carnival");
@@ -77,10 +61,38 @@ public class HellboundDrinks extends CursedConsumables{
 	}
 	
 	public void order() {
-		for(int i = 0; i<super.inventoryFood.length; i++) {
+		for(int i = 0; i<b.showInventory(); i++) {
 			System.out.println("Your order is: " + inventoryFood[i]);
 			System.out.println("Enjoy your food!");
 	}
 	
 }
+
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void setName(String newName) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public double getPrice() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public void setPrice(double newPrice) {
+		// TODO Auto-generated method stub
+		
+	}
 }
