@@ -17,6 +17,8 @@ public class HauntedMaze extends HauntedCarnivalGame{
 		super(p);
 	}
 	
+	//Pre: Null
+	//Post: Void
 	//Main method where all of the actions combined together. This is where all of the story is written.
 	public void playMaze() {
 		
@@ -168,24 +170,32 @@ public class HauntedMaze extends HauntedCarnivalGame{
 		}while(cupcf != 1);
 	}
 	
+	//Pre: Null
+	//Post: Void
 	//Method which adds tickets to player. Used in main method
 	public void winTix() {
 		
 		p.tickets += 100;		
 	}
 	
+	//Pre: Null
+	//Post: Void
 	//Method which adds prize to the player's inventory.
 	public void winPrizes() {
 		
 		p.addInventory("Butchers Knife");
 	}
 	
+	//Pre: Null
+	//Post: Void
 	//Maze game is free to play, that's why this method is never used.
 	public void pay() {
 		
 		
 	}
 	
+	//Pre: Null
+	//Post: Boolean
 	//Same thing as the "pay()" method.
 	public boolean checkPlayersMoney() {
 		

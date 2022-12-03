@@ -24,6 +24,8 @@ public class Player {
         inventory = new String [0]; //start as an empty array
     }
 
+    //Pre: Null
+  	//Post: String[]
     //modifier method - adds items into inventory.
     public String[] addInventory(String a) {//serge this method is absolute genius
 
@@ -38,6 +40,8 @@ public class Player {
         return inventory = newarr;
     }
 
+    //Pre: Null
+  	//Post: Void
     //accessor method - shows the inventory.
     public void showInventory() {
         if (inventory.length == 0) {
@@ -49,6 +53,8 @@ public class Player {
         }
     }
     
+    //Pre: Null
+  	//Post: Void
     //modifier method - converts money into tickets.
     public void convertToTickets() {
 
@@ -82,11 +88,15 @@ public class Player {
         input.close();
     }
 
+    //Pre: Null
+  	//Post: String
     //accessor method - displays money.
     public String displayMoney() {
         return decimal.format(money);
     }
     
+    //Pre: Null
+  	//Post: String
     //method to display overall statistics.
     public String toString() {
 

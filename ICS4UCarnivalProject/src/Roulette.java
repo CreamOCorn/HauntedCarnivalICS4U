@@ -17,6 +17,8 @@ public class Roulette extends HauntedCarnivalGame {
 		
 	}
 	
+	//Pre: Null
+	//Post: Void
 	//Main method. This is where all of the actions combined together.
 	public void playRoulette() {
 		
@@ -107,18 +109,24 @@ public class Roulette extends HauntedCarnivalGame {
 		}
 	}
 	
+	//Pre: Null
+	//Post: Void
 	//You cannot win prizes in this game, only tickets, thus this method is empty
 	public void winPrizes() {
 		
 		
 	}
 	
+	//Pre: Null
+	//Post: Void
 	//Method which subtracts amount of money and used in main method to pay for game.
 	public void pay() {
 		
 		p.money -= 5;
 	}
 	
+	//Pre: Null
+	//Post: Boolean
 	//Method checks whether you have enough money on your balance.
 	public boolean checkPlayersMoney() {
 		
