@@ -1,14 +1,19 @@
 import java.util.*;
 
+//extends abstract cursedConsumables
 public class GhastlyFoods extends CursedConsumables{
 
+	//creating new variable from Player
 	private Player a;
 
+	//making constructor equal the new variable from Player
 	public GhastlyFoods(Player player) {
 		a = player;
 	}
 
-
+	/* Pre: Null
+	 * Post: void
+	 * Action: Allows the user to input whether they want an appetizer or meal or both*/
 	public void userFoods(){
 
 		Scanner sc = new Scanner(System.in);
@@ -23,7 +28,7 @@ public class GhastlyFoods extends CursedConsumables{
 			snackFood();
 
 			String foodmealQ;
-			System.out.println("Would you like to get a meal? Y/N");
+			System.out.println("Would you also like to get a meal? Y/N");
 			foodmealQ = sc.nextLine();
 
 			if(foodmealQ.equals("Y")) {
@@ -122,36 +127,44 @@ public class GhastlyFoods extends CursedConsumables{
 	}
 
 	public void order() {
-		for(int i = 0; i<inventoryFood.length; i++) {
-			System.out.println("Your order is: " + inventoryFood[i]);
-			System.out.println("Enjoy your food!");
-		}
+		System.out.println("Your inventory now looks like this: " );
+		for(int i = 0; i<a.inventory.length; i++) {
+		            System.out.println((i+1) + ") " + a.inventory[i]);
+		        }
 
 
 	}
 
-
+	/* Pre: Abstract method from CursedConsumable
+	 * Post: String
+	 * Action: Gets name of food*/
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-
+	/* Pre: Abstract method from CursedConsumable
+	 * Post: void
+	 * Action: sets Name of food*/
 	@Override
 	public void setName(String newName) {
 		// TODO Auto-generated method stub
 
 	}
 
-
+	/* Pre: Abstract method from CursedConsumable
+	 * Post: double
+	 * Action: gets price of food*/
 	@Override
 	public double getPrice() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-
+	/* Pre: Abstract method from CursedConsumable
+	 * Post: void
+	 * Action: sets Price of food*/
 	@Override
 	public void setPrice(double newPrice) {
 		// TODO Auto-generated method stub

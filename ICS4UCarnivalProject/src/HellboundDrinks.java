@@ -63,10 +63,10 @@ public class HellboundDrinks extends CursedConsumables{
 	}
 	
 	public void order() {
-		for(int i = 0; i<inventoryFood.length; i++) {
-			System.out.println("Your order is: " + inventoryFood[i]);
-			System.out.println("Enjoy your food!");
-		}
+		System.out.println("Your inventory now looks like this: " );
+		for(int i = 0; i<b.inventory.length; i++) {
+		            System.out.println((i+1) + ") " + b.inventory[i]);
+		        }
 		
 	}
 
