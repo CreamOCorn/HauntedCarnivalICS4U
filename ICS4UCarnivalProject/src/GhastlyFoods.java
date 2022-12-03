@@ -14,76 +14,23 @@ public class GhastlyFoods extends CursedConsumables{
 	/* Pre: Null
 	 * Post: void
 	 * Action: Allows the user to input whether they want an appetizer or meal or both*/
-	public void userFoods(){
+	public void userMain(){
 
 		Scanner sc = new Scanner(System.in);
 
 
 		String foodQuestions;
 
-		System.out.println("Would you like to get a appetizer! Y/N");
+		System.out.println("Would you like to get a Meal! Y/N");
 		foodQuestions = sc.nextLine();
 
-		if(foodQuestions.equals("Y")) {
-			snackFood();
-
-			String foodmealQ;
-			System.out.println("Would you also like to get a meal? Y/N");
-			foodmealQ = sc.nextLine();
-
-			if(foodmealQ.equals("Y")) {
-				mainFood();
-			}
-
-		}else if(foodQuestions.equals("N")) {
-			String mealQuestion;
-			System.out.println("Would you like to get a meal? Y/N");
-			mealQuestion = sc.nextLine();
-
-			if(mealQuestion.equals("Y")) {
-				mainFood();
-			}
-
+		if(foodQuestions.equals("Y") || foodQuestions.equals("y")) {
+			mainFood();
+		}else {
+			System.out.println("Return back to the carnival!");
 		}
 
 	}
-
-	public void snackFood() {
-
-		Scanner sc = new Scanner(System.in);
-
-		String [] snackArray = new String[3];
-
-		int userSnack;
-
-		System.out.println("Welcome to the Snack Section!"
-				+ "Each snack costs 6 dollars!\n"
-				+ "\nHere are your Snack options! "
-				+ "1. Scorpian Lollipops"
-				+ "2. Cricket lollipops"
-				+ "3. Chocolate Fingers"
-				+ "\n Pick the numbers 1-3 to choose the snacks you want."
-				+ "\n If you dont want any snacks press 4");
-		userSnack = sc.nextInt();
-
-
-		if(userSnack == 1) {
-			System.out.println("The food you have chosen is: " + snackArray[0]);
-			a.money = a.money - 6;
-			a.addInventory(snackArray[0]);
-		}else if(userSnack == 2) {
-			System.out.println("The food you have chosen is: " + snackArray[1]);
-			a.money = a.money - 6;
-			a.addInventory(snackArray[1]);
-		}else if(userSnack == 3) {
-			System.out.println("The food you have chosen is: " + snackArray[2]);
-			a.money = a.money - 6;
-			a.addInventory(snackArray[2]);
-		}else if(userSnack == 4) {
-			System.out.println("Returning back to carnival");
-		}
-	}
-
 
 	public void mainFood() {
 
