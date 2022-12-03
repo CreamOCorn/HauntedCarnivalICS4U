@@ -106,17 +106,17 @@ public class carnivalMain {
 				choice = input.nextLine();
 				
 				while (!choice.equals("1") && !choice.equals("2")) {
-//					if (choice == "1") {
-//						ghastlyFood gf = new ghastlyFood(p1);
-//						gf.userFoods();
-//						gf.order();
-//					} else if (choice == "2") {
-//						HellboundDrinks gf = new HellboundDrinks(p1);
-//						gf.userDrinks();
-//						gf.order();
-//					} else {
-//						System.out.println("That doesn't seem to exist at the food court.");
-//					}
+					if (choice == "1") {
+						GhastlyFoods gf = new GhastlyFoods(p1);
+						gf.userFoods();
+						gf.order();
+					} else if (choice == "2") {
+						HellboundDrinks gf = new HellboundDrinks(p1);
+						gf.userDrinks();
+						gf.order();
+					} else {
+						System.out.println("That doesn't seem to exist at the food court.");
+					}
 				}
 			} else if (userChoice.equals("5") || userChoice.equalsIgnoreCase("Prize Stand")) {
 				//start an instance of a Prize Stand

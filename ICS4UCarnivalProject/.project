@@ -14,13 +14,6 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/HauntedCarnivalGame.java</name>
-			<type>1</type>
-			<location>/Users/natapahomka/eclipse-workspace/HauntedCarnivalICS4U/ICS4UCarnivalProject/src/HauntedCarnivalGame.java</location>
-		</link>
-	</linkedResources>
 	<filteredResources>
 		<filter>
 			<id>1669128746384</id>
