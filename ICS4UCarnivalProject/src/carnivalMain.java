@@ -14,7 +14,7 @@ public class carnivalMain {
 		Scanner input = new Scanner(System.in);
 		
 		//print the opening sequence
-		//printIntro(input);
+		printIntro(input);
 		
 		//initialize the player's stats using the parameter of how much money they're bringing
 		System.out.println("You sift through your clothes...");
