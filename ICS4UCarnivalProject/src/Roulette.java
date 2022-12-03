@@ -1,7 +1,7 @@
 
 import java.util.*;
 
-public class Roulette extends HauntedCarnival {
+public class Roulette extends HauntedCarnivalGame {
 	
 	public Roulette(Player player) {
 		

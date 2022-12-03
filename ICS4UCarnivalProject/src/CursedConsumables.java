@@ -3,10 +3,12 @@ public abstract class CursedConsumables {
 	
 	protected double price;
 	protected String name;
+	protected String [] inventoryFood;
 	
 	public CursedConsumables() {
 		price = 0; 
 		name = "this food is not found";
+		inventoryFood = new String [0];
 		}
 	
 	public CursedConsumables(String newName, double newPrice) {
@@ -14,21 +16,30 @@ public abstract class CursedConsumables {
 		price = newPrice;
 	}
 	
-	public String getName() {
-		return name;
-		}
+	public abstract String getName();
 	
-	public void setName(String newName) {
-		name = newName;
-	}
+	public abstract void setName(String newName);
 	
-	public double getPrice() {
-		return price;
-	}
+	public abstract double getPrice();
 	
-	public void setPrice(double newPrice) {
-		price = newPrice;
-	}
+	public abstract void setPrice(double newPrice);
+	
+	   
+	public String[] InventoryFood(String a) {//serge this method is absolute genius
+
+	        String[] newarr = new String[inventoryFood.length + 1];
+
+	        for(int i = 0; i < inventoryFood.length; i++) {
+
+	            newarr[i] = inventoryFood[i];
+	        }
+	        newarr[inventoryFood.length] = a;
+
+	        return inventoryFood = newarr;
+	    }
+	
+	
+	
 	
 	public String toString() {
 		return "You chose: " + name + "the price of the food will cost: " + price;
