@@ -100,19 +100,24 @@ public class carnivalMain {
 				System.out.println("On the right, a half-open pumption stand displays the the words \"Hellbound Drinks\".\n");
 				
 				//menu for devilish diner
-				while (!choice.equals("1") && !choice.equals("2")) {
+				while (!choice.equals("1") && !choice.equals("2") && !choice.equals("3")) {
 					System.out.println("Where do you choose to go?\n"
 							+ "1) Ghastly Food\n"
-							+ "2) Hellbound Drinks");
+							+ "2) Hellbound Drinks\n"
+							+ "3) Scary Snacks\n");
 					choice = input.nextLine();
 					if (choice.equals("1")) {
 						GhastlyFoods gf = new GhastlyFoods(p1);
-						gf.userFoods();
+						gf.userMain();
 						gf.order();
 					} else if (choice.equals("2")) {
 						HellboundDrinks gf = new HellboundDrinks(p1);
 						gf.userDrinks();
 						gf.order();
+					} else if (choice.equals("3")) {
+						ScarySnacks ss = new ScarySnacks(p1);
+						ss.userSnacks();
+						ss.order();
 					} else {
 						System.out.println("That doesn't seem to exist at the food court.");
 					}
