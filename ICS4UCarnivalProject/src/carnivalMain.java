@@ -51,16 +51,16 @@ public class carnivalMain {
 	public static void loopMenu(Scanner input, Player p1) {
 		String userChoice = "0";
 		//the carnival menu!
-		while (!userChoice.equals("9")) { 
+		while (!userChoice.equals("7")) { 
 			System.out.println("-----------------------------------------------");
 			System.out.println("What would you like to do?\n"
 					+ "1) Roulette\n"
 					+ "2) Graveyard Dig\n"
 					+ "3) Haunted Maze\n"
 					+ "4) Devilish Diner\n"
-					+ "5) Prize Stand\n\n"
-					+ "6) Check your inventory\n"
-					+ "9) Leave the carnival and go home");
+					+ "5) Prize Stand\n"
+					+ "6) Check your inventory\n\n"
+					+ "7) Leave the carnival and go home");
 			input = new Scanner (System.in); //refresh the scanner
 			userChoice = (input.nextLine());
 			System.out.println();
@@ -97,7 +97,9 @@ public class carnivalMain {
 				System.out.println("A vampire sees and leads you to a jack-o-lantern-lit foodcourt. [Press Enter to Continue]");
 				input.nextLine();
 				System.out.println("On the left, a haunted-looking shack displays the the words \"Ghastly Foods\".");
-				System.out.println("On the right, a half-open pumption stand displays the the words \"Hellbound Drinks\".\n");
+				System.out.println("On the right, a half-open pumpkin stand displays the the words \"Hellbound Drinks\".");
+				System.out.println("In the middle, a humble stand displays the the words \"Scary Snacks\".\n");
+				
 				
 				//menu for devilish diner
 				while (!choice.equals("1") && !choice.equals("2") && !choice.equals("3")) {
@@ -145,12 +147,10 @@ public class carnivalMain {
 						System.out.println("That doesn't seem to exist at the prize stand.");
 					}
 				}
-				
-				
 			} else if (userChoice.equals("6") || userChoice.toLowerCase().contains("inventory")) {
 				System.out.println("You unzip your bag...\n");
 				System.out.println(p1); //print the player's money, tickets, and inventory information
-			} else if (userChoice.equals("9") || userChoice.toLowerCase().contains("leave") || userChoice.toLowerCase().contains("home")) {
+			} else if (userChoice.equals("7") || userChoice.toLowerCase().contains("leave") || userChoice.toLowerCase().contains("home")) {
 				//exit the program
 				System.out.println("You stretch as you decide to wrap up for the day. [Press Enter to Continue]");
 				input.nextLine();
