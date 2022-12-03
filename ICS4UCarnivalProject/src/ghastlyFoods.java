@@ -2,28 +2,12 @@ import java.util.*;
 
 public class ghastlyFoods extends CursedConsumables{
 	
+	private Player a;
 	
-	public ghastlyFoods(String newName, double newPrice) {
-		super(newName, newPrice);
-		
+	public ghastlyFoods(Player player) {
+		a = player;
 	}
 	
-	public String getName() { 
-		return name;
-	}
-	
-	public void setName(String newName) {
-		name  = newName;
-	}
-	
-	public double getPrice() {
-		return price;
-	}
-	
-	public void setPrice(double newPrice) {
-		price = newPrice;
-	}
-
 	
 	public void userFoods(){
 		
@@ -79,13 +63,14 @@ public class ghastlyFoods extends CursedConsumables{
 
 		if(userSnack == 1) {
 			System.out.println("The food you have chosen is: " + snackArray[0]);
-			super.InventoryFood(snackArray[0]);
+			tickets = tickets = 20;
+			a.addInventory(snackArray[0]);
 		}else if(userSnack == 2) {
 			System.out.println("The food you have chosen is: " + snackArray[1]);
-			super.InventoryFood(snackArray[1]);
+			a.addInventory(snackArray[1]);
 		}else if(userSnack == 3) {
 			System.out.println("The food you have chosen is: " + snackArray[2]);
-			super.InventoryFood(snackArray[2]);
+			a.addInventory(snackArray[2]);
 		}else if(userSnack == 4) {
 			System.out.println("Returning back to carnival");
 		}
@@ -116,15 +101,15 @@ public class ghastlyFoods extends CursedConsumables{
 		
 	if(mainChoice == 1) {	
 		System.out.println("The food you have chosen is: " + mealArray[0]);
-		super.InventoryFood(mealArray[0]);
+		a.addInventory(mealArray[0]);
 
 	}else if(mainChoice == 2) {
 		System.out.println("The food you have chosen is: " + mealArray[1]);
-		super.InventoryFood(mealArray[1]);
+		a.addInventory(mealArray[1]);
 		
 	}else if(mainChoice == 3) {
 		System.out.println("The food you have chosen is: " + mealArray[2]);
-		super.InventoryFood(mealArray[2]);
+		a.addInventory(mealArray[2]);
 	
 	}else if (mainChoice == 4){
 		System.out.println("Returning back to carnival");
@@ -133,12 +118,40 @@ public class ghastlyFoods extends CursedConsumables{
 	}
 	
 	public void order() {
-		for(int i = 0; i<super.inventoryFood.length; i++) {
+		for(int i = 0; i<a.inventoryFood.length; i++) {
 			System.out.println("Your order is: " + inventoryFood[i]);
 			System.out.println("Enjoy your food!");
 		}
 		
 
+	}
+
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void setName(String newName) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public double getPrice() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public void setPrice(double newPrice) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 
