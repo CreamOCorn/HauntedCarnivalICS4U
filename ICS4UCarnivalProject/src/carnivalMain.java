@@ -50,7 +50,7 @@ public class carnivalMain {
 	 * attraction based on their input, looping until they decide to exit*/
 	public static void loopMenu(Scanner input, Player p1) {
 		String userChoice = "0";
-		//the menu!
+		//the carnival menu!
 		while (!userChoice.equals("9")) { 
 			System.out.println("-----------------------------------------------");
 			System.out.println("What would you like to do?\n"
@@ -88,29 +88,28 @@ public class carnivalMain {
 				
 				System.out.println("The sounds of screams from the haunted maze intrigues you, taking you to its entrance. [Press Enter to Continue]");
 				input.nextLine();
-				hm.playMaze();
+				hm.playMaze(); //play the game
 				System.out.println("\nYou leave the maze and then make your way back to the park...");
 			} else if (userChoice.equals("4") || userChoice.equalsIgnoreCase("Devilish Diner")) {
-				
-				String choice;
+				String choice = ""; //contains the user's input for the devilish diner menu
 				System.out.println("Your stomach grumbles as you go to the Devilish Diner for a quick bite. [Press Enter to Continue]");
 				input.nextLine();
 				System.out.println("A vampire sees and leads you to a jack-o-lantern-lit foodcourt. [Press Enter to Continue]");
 				input.nextLine();
 				System.out.println("On the left, a haunted-looking shack displays the the words \"Ghastly Foods\".");
 				System.out.println("On the right, a half-open pumption stand displays the the words \"Hellbound Drinks\".\n");
-
-				System.out.println("Where do you choose to go?\n"
-								+ "1) Ghastly Food\n"
-								+ "2) Hellbound Drinks");
-				choice = input.nextLine();
 				
+				//menu for devilish diner
 				while (!choice.equals("1") && !choice.equals("2")) {
-					if (choice == "1") {
+					System.out.println("Where do you choose to go?\n"
+							+ "1) Ghastly Food\n"
+							+ "2) Hellbound Drinks");
+					choice = input.nextLine();
+					if (choice.equals("1")) {
 						GhastlyFoods gf = new GhastlyFoods(p1);
 						gf.userFoods();
 						gf.order();
-					} else if (choice == "2") {
+					} else if (choice.equals("2")) {
 						HellboundDrinks gf = new HellboundDrinks(p1);
 						gf.userDrinks();
 						gf.order();
@@ -122,7 +121,7 @@ public class carnivalMain {
 				//start an instance of a Prize Stand
 				PrizeStand prizestand = new PrizeStand (p1);
 				
-				String choice = "";
+				String choice = ""; //contains the user's input for the prize stand menu
 				System.out.println("A huge stand showcasing plushiess lights up the whole park. [Press Enter to Continue]");
 				input.nextLine();
 				System.out.println("\"Please help yourself to anything here!\" says a person with a hat as large as their grin.\n");
@@ -147,12 +146,14 @@ public class carnivalMain {
 				System.out.println("You unzip your bag...\n");
 				System.out.println(p1); //print the player's money, tickets, and inventory information
 			} else if (userChoice.equals("9") || userChoice.toLowerCase().contains("leave") || userChoice.toLowerCase().contains("home")) {
+				//exit the program
 				System.out.println("You stretch as you decide to wrap up for the day. [Press Enter to Continue]");
 				input.nextLine();
 				System.out.println("Waving to all of the kind monsters, you exit the gate. [Press Enter to Continue]");
 				input.nextLine();
 				System.out.println("\"See you again soon!\"");
 			} else {
+				//re-input information if invalid
 				System.out.println("That attraction doesn't seem to exist. You look around again.");
 			}
 		}	
