@@ -1,14 +1,25 @@
+/*Author: Serge Shpolskyy
+ *Date: December 4, 2022
+ *Course: ICS4U
+ *Description: Minigame Roulette. Try your luck and win up to 1'000'000 tickets!!!
+ *There are also chances to win 10'000, 1'000, 100 and 20 tickets.
+ *Don't forget that this minigame based on gambling and your chances to lose still are the biggest.
+ */
 
 import java.util.*;
 
 public class Roulette extends HauntedCarnivalGame {
 	
-	public Roulette(Player player) {
+	//constructor.
+	public Roulette(Player p) {
 		
-		super(player);
+		super(p);
 		
 	}
 	
+	//Pre: Null
+	//Post: Void
+	//Main method. This is where all of the actions combined together.
 	public void playRoulette() {
 		
 		Scanner input = new Scanner(System.in);
@@ -19,56 +30,27 @@ public class Roulette extends HauntedCarnivalGame {
 		System.out.println("\nPrice to play is 5 dollars. Would you like to play? (Enter \"y\" or \"n\")");
 		ans = input.next();
 		
-		while(!ans.equals("n") && super.getMoney() > 0){
+		//if your input is invalid, program will repeat itself.
+		while(!ans.equals("n") && checkPlayersMoney() == true){
 			
 			if(ans.equals("y")) {
 			
+				//while you choose to play again and not out of money, program will repeat itself.
 				do {
 				
-					Random number = new Random();
-					int num = number.nextInt(1000000) + 1;
-	
-					if(num <= 10) {
-						
-						System.out.println("\nYou've won 10'000 tickets!!! Congratulations!!!\n");
-						super.gainTix(10000);
-						
-					} else if(num > 10 && num <= 1000) {
-						
-						System.out.println("\nYou've won 1'000 tickets!!! Congratulations!!!\n");
-						super.gainTix(1000);
-						
-					} else if(num > 1000 && num <= 100000) {
-						
-						System.out.println("\nYou've won 100 tickets! Congratulations!!!\n");
-						super.gainTix(100);
-						
-					} else if(num == 578439) {
-						
-						System.out.println("\nCONGRATULATIONS!!! YOU ARE NOW A MILLIONAIRE!!! YOU HAVE WON 1'000'000 TICKETS!!!\n");
-						super.gainTix(1000000);
-						
-					} else if(num > 100000 && num <= 500000){
-						
-						System.out.println("\nYou've won 20 tickets.\n");
-						super.gainTix(20);
-						
-					} else {
-						
-						System.out.println("\nYou lost :(\n");
-					}
+					winTix();
 					
-					super.gainMoney(-5);
+					pay();
 					
 					System.out.println("Would you like to play again? (Enter \"y\" or \"n\")");
 					ans = input.next();
 					
-					if(super.getMoney() <= 0) {
+					if(checkPlayersMoney() == false) {
 						
 						System.out.println("\nSorry, you are out of money.");
 					}
 				
-				}while(ans.equals("y") && super.getMoney() > 0);
+				}while(ans.equals("y") && checkPlayersMoney() == true);
 				
 			} else if(ans.equals("n")){
 				
@@ -88,6 +70,72 @@ public class Roulette extends HauntedCarnivalGame {
 			
 			System.out.println("Too bad you don't want to gamble away money :(");
 		}
+	}
+	
+	//Method, where amount of tickets you will win is chosen
+	public void winTix() {
+		
+		Random number = new Random();
+		int num = number.nextInt(1000000) + 1;
+
+		if(num <= 100) {
+			
+			System.out.println("\nYou've won 10'000 tickets!!! Congratulations!!!");
+			p.tickets += 10000;
+			
+		} else if(num > 100 && num <= 10000) {
+			
+			System.out.println("\nYou've won 1'000 tickets!!! Congratulations!!!");
+			p.tickets += 1000;
+			
+		} else if(num > 10000 && num <= 100000) {
+			
+			System.out.println("\nYou've won 100 tickets! Congratulations!!!");
+			p.tickets += 100;
+			
+		} else if(num == 578439) {
+			
+			System.out.println("\nCONGRATULATIONS!!! YOU ARE NOW A MILLIONAIRE!!! YOU HAVE WON 1'000'000 TICKETS!!!");
+			p.tickets += 1000000;
+			
+		} else if(num > 100000 && num <= 500000){
+			
+			System.out.println("\nYou've won 20 tickets.");
+			p.tickets += 20;
+			
+		} else {
+			
+			System.out.println("\nYou lost :(");
+		}
+	}
+	
+	//Pre: Null
+	//Post: Void
+	//You cannot win prizes in this game, only tickets, thus this method is empty
+	public void winPrizes() {
+		
+		
+	}
+	
+	//Pre: Null
+	//Post: Void
+	//Method which subtracts amount of money and used in main method to pay for game.
+	public void pay() {
+		
+		p.money -= 5;
+	}
+	
+	//Pre: Null
+	//Post: Boolean
+	//Method checks whether you have enough money on your balance.
+	public boolean checkPlayersMoney() {
+		
+		if(p.money >= 5) {
+			
+			return true;
+		}
+		
+		return false;
 	}
 }
 

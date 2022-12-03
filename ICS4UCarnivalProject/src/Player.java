@@ -1,7 +1,9 @@
 /*Author: Serge Shpolskyy
  *Date: December 4, 2022
  *Course: ICS4U
- *Description: 
+ *Description: The class stores variables of money, tickets and inventory.
+ *Makes possible to add items into inventory, convert money to tickets, display money and
+ *inventory, and shows overall statistics.
  */
 
 import java.text.NumberFormat;
@@ -9,18 +11,23 @@ import java.util.*;
 
 
 public class Player {
+	//variable declaration.
     NumberFormat decimal = NumberFormat.getCurrencyInstance();
     public double money;
     public int tickets;
     public String[] inventory;
 
+    //constructor
     public Player (double money1) {
         money = money1;
         tickets = 0;
         inventory = new String [0]; //start as an empty array
     }
 
-    public String[] addInventory(String a) {//serge this method is absolute genius
+    //Pre: Null
+  	//Post: String[]
+    //modifier method - adds items into inventory.
+    public String[] addInventory(String a) {
 
         String[] newarr = new String[inventory.length + 1];
 
@@ -33,6 +40,9 @@ public class Player {
         return inventory = newarr;
     }
 
+    //Pre: Null
+  	//Post: Void
+    //accessor method - shows the inventory.
     public void showInventory() {
         if (inventory.length == 0) {
             System.out.print("Seems empty here...");
@@ -43,7 +53,9 @@ public class Player {
         }
     }
     
-//Should we put this into the prize stand instead? - An
+    //Pre: Null
+  	//Post: Void
+    //modifier method - converts money into tickets.
     public void convertToTickets() {
 
         Scanner input = new Scanner(System.in);
@@ -76,10 +88,16 @@ public class Player {
         input.close();
     }
 
+    //Pre: Null
+  	//Post: String
+    //accessor method - displays money.
     public String displayMoney() {
         return decimal.format(money);
     }
     
+    //Pre: Null
+  	//Post: String
+    //method to display overall statistics.
     public String toString() {
 
         String info = "Money: " + decimal.format(money) + "\nTickets: " + tickets + "\nInventory:";

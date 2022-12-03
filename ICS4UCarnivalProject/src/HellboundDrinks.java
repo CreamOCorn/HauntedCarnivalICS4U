@@ -46,28 +46,27 @@ public class HellboundDrinks extends CursedConsumables{
 		
 		int mainChoice = sc.nextInt();
 		
-	if(mainChoice == 1) {	
-		System.out.println("The drink you have chosen is: " + HellboundDrinks[0]);
-		b.addInventory(HellboundDrinks[0]);
-		
-	}else if(mainChoice == 2) {
-		System.out.println("The drink you have chosen is: " + HellboundDrinks[1]);
-		b.addInventory(HellboundDrinks[1]);
-		
-	}else if(mainChoice == 3) {
-		System.out.println("Going back to the Carnival");
-	}
+		if(mainChoice == 1) {	
+			System.out.println("The drink you have chosen is: " + HellboundDrinks[0]);
+			b.addInventory(HellboundDrinks[0]);
+			
+		}else if(mainChoice == 2) {
+			System.out.println("The drink you have chosen is: " + HellboundDrinks[1]);
+			b.addInventory(HellboundDrinks[1]);
+			
+		}else if(mainChoice == 3) {
+			System.out.println("Going back to the Carnival");
+		}
 	
 	}
 	
 	public void order() {
-		for(int i = 0; i<b.showInventory(); i++) {
+		for(int i = 0; i<inventoryFood.length; i++) {
 			System.out.println("Your order is: " + inventoryFood[i]);
 			System.out.println("Enjoy your food!");
+		}
+		
 	}
-	
-}
-
 
 	@Override
 	public String getName() {

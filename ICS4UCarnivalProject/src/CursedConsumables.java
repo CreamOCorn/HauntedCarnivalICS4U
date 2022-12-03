@@ -1,4 +1,3 @@
-
 public abstract class CursedConsumables {
 	
 	protected double price;
@@ -48,3 +47,4 @@ public abstract class CursedConsumables {
 	
 
 }
+
