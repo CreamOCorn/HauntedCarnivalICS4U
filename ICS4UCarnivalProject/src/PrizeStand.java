@@ -42,7 +42,7 @@ public class PrizeStand {
 		Scanner sc = new Scanner(System.in);
 		
 		String plushInput;
-		System.out.println("Welcome to the Plushy Store!" + "/n Here you have many options, from cute plushies, to SCARY ones! \nThe plushys cost 20$ each");
+		System.out.println("Welcome to the Plushy Store!" + "/n Here you have many options, from cute plushies, to SCARY ones! \nThe plushys cost 40 tickets each");
 		System.out.println("Would you like to buy plushies? Y/N");
 		plushInput = sc.nextLine();
 		
@@ -76,6 +76,8 @@ public class PrizeStand {
 					
 			
 				p.addInventory("panda");
+				
+				p.tickets = p.tickets - 40;
 			
 				System.out.println(panda);
 				
@@ -97,6 +99,8 @@ public class PrizeStand {
 								+ "⠀⠀⠙⠒⠒⠚⠒⠋⠉⠉⠀⠈⠓⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
 				
 				p.addInventory("turtle");
+				
+				p.tickets = p.tickets - 40;
 				
 				System.out.println(turtle);
 				
@@ -128,7 +132,10 @@ public class PrizeStand {
 				
 				p.addInventory("spider");
 				
+				p.tickets = p.tickets - 40;
+				
 				System.out.println(spider);
+				
 			}else if(plushChoice == 4) {
 				String pumpkin = ("You picked the Pumpkin plushy!" + "\n Collect your prize:");
 				
@@ -159,6 +166,8 @@ public class PrizeStand {
 						+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
 				
 				p.addInventory("pumpkin");
+				
+				p.tickets = p.tickets - 40;
 				
 				System.out.println(pumpkin);
 				
@@ -195,6 +204,8 @@ public class PrizeStand {
 
 				
 				p.addInventory("ghost");
+				
+				p.tickets = p.tickets - 40;
 				
 				System.out.println(ghost);
 			}

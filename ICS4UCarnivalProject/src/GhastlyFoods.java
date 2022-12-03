@@ -52,6 +52,7 @@ public class GhastlyFoods extends CursedConsumables{
 		int userSnack;
 
 		System.out.println("Welcome to the Snack Section!"
+				+ "Each snack costs 6 dollars!\n"
 				+ "\nHere are your Snack options! "
 				+ "1. Scorpian Lollipops"
 				+ "2. Cricket lollipops"
@@ -63,13 +64,15 @@ public class GhastlyFoods extends CursedConsumables{
 
 		if(userSnack == 1) {
 			System.out.println("The food you have chosen is: " + snackArray[0]);
-			a.tickets = a.tickets - 20;
+			a.money = a.money - 6;
 			a.addInventory(snackArray[0]);
 		}else if(userSnack == 2) {
 			System.out.println("The food you have chosen is: " + snackArray[1]);
+			a.money = a.money - 6;
 			a.addInventory(snackArray[1]);
 		}else if(userSnack == 3) {
 			System.out.println("The food you have chosen is: " + snackArray[2]);
+			a.money = a.money - 6;
 			a.addInventory(snackArray[2]);
 		}else if(userSnack == 4) {
 			System.out.println("Returning back to carnival");
@@ -88,8 +91,9 @@ public class GhastlyFoods extends CursedConsumables{
 		mealArray[2] = "Blood Soup";
 
 		System.out.println("Welcome to the Meal Section!"
+				+ "Each meal costs 12 dollars!!"
 				+ "\nHere are your Meal options! "
-				+ "1. Devil’s Hair Pasta"
+				+ "1. Devils Hair Pasta"
 				+ "2. Zombie Brain Burger"
 				+ "3. Blood Soup"
 				+ "\n Pick the numbers 1-3 to choose the Meal you want."
@@ -102,15 +106,15 @@ public class GhastlyFoods extends CursedConsumables{
 		if(mainChoice == 1) {	
 			System.out.println("The food you have chosen is: " + mealArray[0]);
 			a.addInventory(mealArray[0]);
-
+			a.money = a.money - 12;
 		}else if(mainChoice == 2) {
 			System.out.println("The food you have chosen is: " + mealArray[1]);
 			a.addInventory(mealArray[1]);
-
+			a.money = a.money - 12;
 		}else if(mainChoice == 3) {
 			System.out.println("The food you have chosen is: " + mealArray[2]);
 			a.addInventory(mealArray[2]);
-
+			a.money = a.money - 12;
 		}else if (mainChoice == 4){
 			System.out.println("Returning back to carnival");
 		}

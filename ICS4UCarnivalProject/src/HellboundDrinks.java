@@ -38,6 +38,7 @@ public class HellboundDrinks extends CursedConsumables{
 		
 		
 		System.out.println("Welcome to the Drink Section!"
+				+ "Each drink costs 3 dollars!"
 				+ "\nHere are your Drink options! "
 				+ "1. Bloody Mary"
 				+ "2. Ectoplasm Pineapple"
@@ -49,11 +50,12 @@ public class HellboundDrinks extends CursedConsumables{
 		if(mainChoice == 1) {	
 			System.out.println("The drink you have chosen is: " + HellboundDrinks[0]);
 			b.addInventory(HellboundDrinks[0]);
+			b.money = b.money - 3;
 			
 		}else if(mainChoice == 2) {
 			System.out.println("The drink you have chosen is: " + HellboundDrinks[1]);
 			b.addInventory(HellboundDrinks[1]);
-			
+			b.money = b.money - 3;
 		}else if(mainChoice == 3) {
 			System.out.println("Going back to the Carnival");
 		}
