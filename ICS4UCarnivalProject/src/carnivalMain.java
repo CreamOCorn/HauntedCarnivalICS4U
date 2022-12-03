@@ -111,9 +111,9 @@ public class carnivalMain {
 						gf.userMain();
 						gf.order();
 					} else if (choice.equals("2")) {
-						HellboundDrinks gf = new HellboundDrinks(p1);
-						gf.userDrinks();
-						gf.order();
+						HellboundDrinks hbd = new HellboundDrinks(p1);
+						hbd.userDrinks();
+						hbd.order();
 					} else if (choice.equals("3")) {
 						ScarySnacks ss = new ScarySnacks(p1);
 						ss.userSnacks();
