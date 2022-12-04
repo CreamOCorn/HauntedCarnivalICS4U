@@ -188,7 +188,7 @@ public class GraveyardDig extends HauntedCarnivalGame {
 	 * Post: Void
 	 * Action: Determines a random number of tickets for the user to win*/
 	public void winTix () {
-		int[] tixAmount = {5, 10, 20, 50, 100};
+		int[] tixAmount = {10, 20, 50, 75, 100};
 		Random rand = new Random();
 		int randNum;
 		
