@@ -1,5 +1,6 @@
 import java.util.*;
 
+//extends CursedConsumables
 public class ScarySnacks extends CursedConsumables{
 
 	//creating new variable from Player
@@ -10,7 +11,9 @@ public class ScarySnacks extends CursedConsumables{
 		c = player;
 	}
 	
-	
+	/* Pre: Null
+	 * Post: void
+	 * Action: Allows the user to input whether they want a snack or not*/
 	public void userSnacks() {
 		
 		Scanner sc = new Scanner(System.in);
@@ -29,26 +32,36 @@ public class ScarySnacks extends CursedConsumables{
 	
 	
 	
-	
+	/* Pre: Null
+	 * Post: void
+	 * Action: method which gives user options of snacks and allows them to choose what they want*/
 	public void snackFood() {
-
+		
+		//Scanner
 		Scanner sc = new Scanner(System.in);
 
+		//String array of 3 for 3 foods
 		String [] snackArray = new String[3];
+		
+		//3 snacks
+		snackArray[0] = "Scorpion Lollipops";
+		snackArray[1] = "Cricket Lollipops";
+		snackArray[2] = "Chocolate Fingers";
 
 		int userSnack;
 
+		//outputs the snacks and picks options
 		System.out.println("Welcome to the Snack Section!"
 				+ "Each snack costs 6 dollars!\n"
 				+ "\nHere are your Snack options! "
-				+ "1. Scorpian Lollipops"
-				+ "2. Cricket lollipops"
-				+ "3. Chocolate Fingers"
-				+ "\n Pick the numbers 1-3 to choose the snacks you want."
-				+ "\n If you dont want any snacks press 4");
+				+ "\n1. Scorpian Lollipops"
+				+ "\n2. Cricket lollipops"
+				+ "\n3. Chocolate Fingers"
+				+ "\nPick the numbers 1-3 to choose the snacks you want."
+				+ "\nIf you dont want any snacks press 4");
 		userSnack = sc.nextInt();
 
-
+		//if statements for which one they choose, adds it to inventory and takes money out of account
 		if(userSnack == 1) {
 			System.out.println("The food you have chosen is: " + snackArray[0]);
 			c.money = c.money - 6;
@@ -66,7 +79,9 @@ public class ScarySnacks extends CursedConsumables{
 		}
 	}
 	
-	
+	/* Pre: Null
+	 * Post: void
+	 * Action: 	//order to show them what they have in their inventory after ordering that snack*/
 	public void order() {
 		System.out.println("Your inventory now looks like this: " );
 		for(int i = 0; i<c.inventory.length; i++) {

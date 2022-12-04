@@ -13,18 +13,22 @@ public class GhastlyFoods extends CursedConsumables{
 
 	/* Pre: Null
 	 * Post: void
-	 * Action: Allows the user to input whether they want an appetizer or meal or both*/
+	 * Action: Allows the user to input whether they want a meal or not*/
 	public void userMain(){
 
+		//Scanner
 		Scanner sc = new Scanner(System.in);
 
-
+		
+		//variable to ask user if they want a meal
 		String foodQuestions;
 
 		System.out.println("Would you like to get a Meal! Y/N");
 		foodQuestions = sc.nextLine();
 
+		//if statement if they choose yes
 		if(foodQuestions.equals("Y") || foodQuestions.equals("y")) {
+			//goes through the mainFood method instead of printing it all here
 			mainFood();
 		}else {
 			System.out.println("Return back to the carnival!");
@@ -32,29 +36,36 @@ public class GhastlyFoods extends CursedConsumables{
 
 	}
 
+	/* Pre: Null
+	 * Post: void
+	 * Action: method which gives user options of food and allows them to choose what they want*/
 	public void mainFood() {
 
+		//Scanner
 		Scanner sc = new Scanner(System.in);
 
+		//String out of 3 for 3 meal options
 		String[] mealArray = new String[3];
 
+		//3 meal options
 		mealArray[0] = "Devils Hair Pasta";
 		mealArray[1] = "Zombie Brain Burger";
 		mealArray[2] = "Blood Soup";
 
+		//outputting the 3 meals
 		System.out.println("Welcome to the Meal Section!"
 				+ "Each meal costs 12 dollars!!"
 				+ "\nHere are your Meal options! "
-				+ "1. Devils Hair Pasta"
-				+ "2. Zombie Brain Burger"
-				+ "3. Blood Soup"
-				+ "\n Pick the numbers 1-3 to choose the Meal you want."
-				+ "\n If you dont want any Meals press 4");
+				+ "\n1. Devils Hair Pasta"
+				+ "\n2. Zombie Brain Burger"
+				+ "\n3. Blood Soup"
+				+ "\nPick the numbers 1-3 to choose the Meal you want."
+				+ "\nIf you dont want any Meals press 4");
 
 		int mainChoice = sc.nextInt();
 
 
-
+		//if statements for which one they choose, adds it to inventory and takes money out of account
 		if(mainChoice == 1) {	
 			System.out.println("The food you have chosen is: " + mealArray[0]);
 			a.addInventory(mealArray[0]);
@@ -72,7 +83,10 @@ public class GhastlyFoods extends CursedConsumables{
 		}
 
 	}
-
+	
+	/* Pre: Null
+	 * Post: void
+	 * Action: 	//order to show them what they have in their inventory after ordering that meal*/
 	public void order() {
 		System.out.println("Your inventory now looks like this: " );
 		for(int i = 0; i<a.inventory.length; i++) {

@@ -4,7 +4,6 @@ public abstract class CursedConsumables {
 	//variables
 	protected double price;
 	protected String name;
-	protected String [] inventoryFood;
 	
 	
 	//constructor 
