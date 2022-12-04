@@ -98,32 +98,33 @@ public class carnivalMain {
 				input.nextLine();
 				System.out.println("On the left, a haunted-looking shack displays the the words \"Ghastly Foods\".");
 				System.out.println("On the right, a half-open pumpkin stand displays the the words \"Hellbound Drinks\".");
-				System.out.println("In the middle, a humble stand displays the the words \"Scary Snacks\".\n");
+				System.out.println("In the middle, a humble stand displays the the words \"Scary Snacks\".");
 				
 				
 				//menu for devilish diner
-				while (!choice.equals("1") && !choice.equals("2") && !choice.equals("3")) {
-					System.out.println("Where do you choose to go?\n"
+				while (!choice.equals("4")) {
+					System.out.println("\nWhere do you choose to go?\n"
 							+ "1) Ghastly Food\n"
 							+ "2) Hellbound Drinks\n"
-							+ "3) Scary Snacks\n");
+							+ "3) Scary Snacks\n"
+							+ "4) Leave the food court\n");
 					choice = input.nextLine();
 					if (choice.equals("1")) {
 						GhastlyFoods gf = new GhastlyFoods(p1);
-						gf.userMain();
-						gf.order();
+						gf.getOrder();
 					} else if (choice.equals("2")) {
 						HellboundDrinks hbd = new HellboundDrinks(p1);
-						hbd.userDrinks();
-						hbd.order();
+						hbd.getOrder();
 					} else if (choice.equals("3")) {
 						ScarySnacks ss = new ScarySnacks(p1);
-						ss.userSnacks();
-						ss.order();
+						ss.getOrder();
+					} else if (choice.equals("4")) {
+						System.out.println("Time to leave!");
 					} else {
 						System.out.println("That doesn't seem to exist at the food court.");
 					}
 				}
+				System.out.println();
 			} else if (userChoice.equals("5") || userChoice.equalsIgnoreCase("Prize Stand")) {
 				//start an instance of a Prize Stand
 				PrizeStand prizestand = new PrizeStand (p1);

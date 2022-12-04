@@ -2,24 +2,16 @@ public abstract class CursedConsumables {
 	
 	
 	//variables
-	protected double price;
-	protected String name;
+	protected Player player;
 	
 	
 	//constructor 
 	/* Pre: Null
 	 * Post: Null
 	 * Action: gives values to variables(default values)*/
-	public CursedConsumables() {
-		price = 0; 
-		name = "this food is not found";
+	public CursedConsumables(Player p) {
+		player = p;
 		}
-	
-	//constructor which makes name and price instead of it being given
-	public CursedConsumables(String newName, double newPrice) {
-		name = newName;
-		price = newPrice;
-	}
 	
 	//constructor 
 	/* Pre: Null

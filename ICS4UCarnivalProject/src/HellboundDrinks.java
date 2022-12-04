@@ -2,14 +2,10 @@ import java.util.*;
 
 //extends CursedConsumables
 public class HellboundDrinks extends CursedConsumables{
-
-	
-	//creating new variable of player
-	private Player b;
 	
 	//making constructor equal the new variable from Player
 	public HellboundDrinks(Player player) {
-		b = player;
+		super(player);
 	}
 	
 	/* Pre: Null
@@ -30,6 +26,7 @@ public class HellboundDrinks extends CursedConsumables{
 		//if statement for them picking Y or N
 		if (drinkQ.equals("Y") || drinkQ.equals("y")) {
 			order();
+			showOrder();
 		}else {
 			System.out.println("Going back to carnival!");
 		}
@@ -65,13 +62,13 @@ public class HellboundDrinks extends CursedConsumables{
 		//if statements for which one they choose, adds it to inventory and takes money out of account
 		if(mainChoice == 1) {	
 			System.out.println("The drink you have chosen is: " + HellboundDrinks[0]);
-			b.addInventory(HellboundDrinks[0]);
-			b.money = b.money - 3;
+			player.addInventory(HellboundDrinks[0]);
+			player.money = player.money - 3;
 			
 		}else if(mainChoice == 2) {
 			System.out.println("The drink you have chosen is: " + HellboundDrinks[1]);
-			b.addInventory(HellboundDrinks[1]);
-			b.money = b.money - 3;
+			player.addInventory(HellboundDrinks[1]);
+			player.money = player.money - 3;
 		}else if(mainChoice == 3) {
 			System.out.println("Going back to the Carnival");
 		}
@@ -81,10 +78,10 @@ public class HellboundDrinks extends CursedConsumables{
 	/* Pre: Null
 	 * Post: void
 	 * Action: 	//order to show them what they have in their inventory after ordering that drink*/
-	public void ShowOrder() {
+	public void showOrder() {
 		System.out.println("Your inventory now looks like this: " );
-		for(int i = 0; i<b.inventory.length; i++) {
-		            System.out.println((i+1) + ") " + b.inventory[i]);
+		for(int i = 0; i<player.inventory.length; i++) {
+		            System.out.println((i+1) + ") " + player.inventory[i]);
 		        }
 		
 	}

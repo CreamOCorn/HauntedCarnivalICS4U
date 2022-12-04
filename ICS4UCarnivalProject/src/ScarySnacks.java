@@ -3,12 +3,9 @@ import java.util.*;
 //extends CursedConsumables
 public class ScarySnacks extends CursedConsumables{
 
-	//creating new variable from Player
-	private Player c;
-
 	//making constructor equal the new variable from Player
 	public ScarySnacks(Player player) {
-		c = player;
+		super(player);
 	}
 	
 	/* Pre: Null
@@ -24,6 +21,7 @@ public class ScarySnacks extends CursedConsumables{
 		
 		if(snackQ.equals("Y") || snackQ.equals("y")) {
 			order();
+			showOrder();
 		}else {
 			System.out.println("Return back to the carnival!");
 		}
@@ -64,16 +62,16 @@ public class ScarySnacks extends CursedConsumables{
 		//if statements for which one they choose, adds it to inventory and takes money out of account
 		if(userSnack == 1) {
 			System.out.println("The food you have chosen is: " + snackArray[0]);
-			c.money = c.money - 6;
-			c.addInventory(snackArray[0]);
+			player.money = player.money - 6;
+			player.addInventory(snackArray[0]);
 		}else if(userSnack == 2) {
 			System.out.println("The food you have chosen is: " + snackArray[1]);
-			c.money = c.money - 6;
-			c.addInventory(snackArray[1]);
+			player.money = player.money - 6;
+			player.addInventory(snackArray[1]);
 		}else if(userSnack == 3) {
 			System.out.println("The food you have chosen is: " + snackArray[2]);
-			c.money = c.money - 6;
-			c.addInventory(snackArray[2]);
+			player.money = player.money - 6;
+			player.addInventory(snackArray[2]);
 		}else if(userSnack == 4) {
 			System.out.println("Returning back to carnival");
 		}
@@ -82,10 +80,10 @@ public class ScarySnacks extends CursedConsumables{
 	/* Pre: Null
 	 * Post: void
 	 * Action: 	//order to show them what they have in their inventory after ordering that snack*/
-	public void ShowOrder() {
+	public void showOrder() {
 		System.out.println("Your inventory now looks like this: " );
-		for(int i = 0; i<c.inventory.length; i++) {
-		            System.out.println((i+1) + ") " + c.inventory[i]);
+		for(int i = 0; i<player.inventory.length; i++) {
+		            System.out.println((i+1) + ") " + player.inventory[i]);
 		        }
 	}
 }
