@@ -3,12 +3,9 @@ import java.util.*;
 //extends CursedConsumables
 public class ScarySnacks extends CursedConsumables{
 
-	//creating new variable from Player
-	private Player c;
-
 	//making constructor equal the new variable from Player
 	public ScarySnacks(Player player) {
-		c = player;
+		super(player);
 	}
 	
 	/* Pre: Null
@@ -87,5 +84,11 @@ public class ScarySnacks extends CursedConsumables{
 		for(int i = 0; i<c.inventory.length; i++) {
 		            System.out.println((i+1) + ") " + c.inventory[i]);
 		        }
+	}
+
+	@Override
+	public void showOrder() {
+		// TODO Auto-generated method stub
+		
 	}
 }

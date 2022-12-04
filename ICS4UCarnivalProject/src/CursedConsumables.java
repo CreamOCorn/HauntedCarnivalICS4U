@@ -15,6 +15,20 @@ public abstract class CursedConsumables {
 		name = "this food is not found";
 		}
 	
+	private player a;
+	
+	//making a constructor for c to equal a value for player
+    public CursedConsumables (Player player) {
+        a = player;
+    }
+	
+	//creating new variable from Player for Scary Snacks
+	private Player c;
+	
+	//making a constructor for c to equal a value for player
+    public CursedConsumables (Player player) {
+        c = player;
+    }
 	//constructor which makes name and price instead of it being given
 	public CursedConsumables(String newName, double newPrice) {
 		name = newName;
