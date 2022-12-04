@@ -92,7 +92,7 @@ public class carnivalMain {
 				System.out.println("\nYou leave the maze and then make your way back to the park...");
 			} else if (userChoice.equals("4") || userChoice.equalsIgnoreCase("Devilish Diner")) {
 				String choice = ""; //contains the user's input for the devilish diner menu
-				System.out.println("Your stomach grumbles as you go to the Devilish Diner for a quick bite. [Press Enter to Continue]");
+				System.out.println("You head to the Devilish Diner for a quick bite. [Press Enter to Continue]");
 				input.nextLine();
 				System.out.println("A vampire sees and leads you to a jack-o-lantern-lit foodcourt. [Press Enter to Continue]");
 				input.nextLine();

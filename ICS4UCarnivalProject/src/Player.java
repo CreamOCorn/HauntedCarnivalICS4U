@@ -52,41 +52,6 @@ public class Player {
             }
         }
     }
-    
-    //Pre: Null
-  	//Post: Void
-    //modifier method - converts money into tickets.
-    public void convertToTickets() {
-
-        Scanner input = new Scanner(System.in);
-        int howmuch;
-
-        System.out.println("How much money do you want to convert? (You currently have " + decimal.format(money) + ")");
-        howmuch = input.nextInt();
-
-        do {
-
-        if(howmuch <= money) {
-
-            tickets = tickets + (howmuch*20);
-            money = money - howmuch;
-            System.out.println("You now have " + tickets + " tickets.");
-            break;
-
-        } else {
-
-            do {
-
-                System.out.println("You have entered the number that exceeded your amount of money, please try again.");
-                howmuch = input.nextInt();
-
-            }while(howmuch > money);
-        }
-
-        }while(howmuch < money);
-
-        input.close();
-    }
 
     //Pre: Null
   	//Post: String
