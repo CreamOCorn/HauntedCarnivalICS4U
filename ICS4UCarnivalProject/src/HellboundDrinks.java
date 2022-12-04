@@ -15,7 +15,7 @@ public class HellboundDrinks extends CursedConsumables{
 	/* Pre: Null
 	 * Post: void
 	 * Action: Allows the user to input whether they want a drink or not*/
-	public void userDrinks() {
+	public void getOrder() {
 		
 		//Scanner
 		Scanner sc  = new Scanner(System.in);
@@ -29,7 +29,7 @@ public class HellboundDrinks extends CursedConsumables{
 		
 		//if statement for them picking Y or N
 		if (drinkQ.equals("Y") || drinkQ.equals("y")) {
-			drinks();
+			order();
 		}else {
 			System.out.println("Going back to carnival!");
 		}
@@ -38,7 +38,7 @@ public class HellboundDrinks extends CursedConsumables{
 	/* Pre: Null
 	 * Post: void
 	 * Action: method which gives user options of drinks and allows them to choose what they want*/
-	public void drinks() {
+	public void order() {
 		
 		//Scanner
 		Scanner sc = new Scanner(System.in);
@@ -81,47 +81,11 @@ public class HellboundDrinks extends CursedConsumables{
 	/* Pre: Null
 	 * Post: void
 	 * Action: 	//order to show them what they have in their inventory after ordering that drink*/
-	public void order() {
+	public void ShowOrder() {
 		System.out.println("Your inventory now looks like this: " );
 		for(int i = 0; i<b.inventory.length; i++) {
 		            System.out.println((i+1) + ") " + b.inventory[i]);
 		        }
 		
 	}
-
-
-	/* Pre: Abstract method from CursedConsumable
-	 * Post: String
-	 * Action: Gets name of food*/
-	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	/* Pre: Abstract method from CursedConsumable
-	 * Post: void
-	 * Action: sets Name of food*/
-	@Override
-	public void setName(String newName) {
-		// TODO Auto-generated method stub
-
-	}
-
-	/* Pre: Abstract method from CursedConsumable
-	 * Post: double
-	 * Action: gets price of food*/
-	@Override
-	public double getPrice() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	/* Pre: Abstract method from CursedConsumable
-	 * Post: void
-	 * Action: sets Price of food*/
-	@Override
-	public void setPrice(double newPrice) {
-		// TODO Auto-generated method stub
-
 	}

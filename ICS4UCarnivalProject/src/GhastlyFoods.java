@@ -13,8 +13,8 @@ public class GhastlyFoods extends CursedConsumables{
 
 	/* Pre: Null
 	 * Post: void
-	 * Action: Allows the user to input whether they want a meal or not*/
-	public void userMain(){
+	 * Action: Allows the user to input whether they want a meal or not, Used from CursedConsumables*/
+	public void getOrder(){
 
 		//Scanner
 		Scanner sc = new Scanner(System.in);
@@ -29,7 +29,7 @@ public class GhastlyFoods extends CursedConsumables{
 		//if statement if they choose yes
 		if(foodQuestions.equals("Y") || foodQuestions.equals("y")) {
 			//goes through the mainFood method instead of printing it all here
-			mainFood();
+			order();
 		}else {
 			System.out.println("Return back to the carnival!");
 		}
@@ -38,8 +38,8 @@ public class GhastlyFoods extends CursedConsumables{
 
 	/* Pre: Null
 	 * Post: void
-	 * Action: method which gives user options of food and allows them to choose what they want*/
-	public void mainFood() {
+	 * Action: method which gives user options of food and allows them to choose what they want, Used from CursedConsumables*/
+	public void order() {
 
 		//Scanner
 		Scanner sc = new Scanner(System.in);
@@ -86,8 +86,8 @@ public class GhastlyFoods extends CursedConsumables{
 	
 	/* Pre: Null
 	 * Post: void
-	 * Action: 	//order to show them what they have in their inventory after ordering that meal*/
-	public void order() {
+	 * Action: 	//order to show them what they have in their inventory after ordering that meal, Used from CursedConsumables*/
+	public void showOrder() {
 		System.out.println("Your inventory now looks like this: " );
 		for(int i = 0; i<a.inventory.length; i++) {
 		            System.out.println((i+1) + ") " + a.inventory[i]);
@@ -95,42 +95,4 @@ public class GhastlyFoods extends CursedConsumables{
 
 
 	}
-
-	/* Pre: Abstract method from CursedConsumable
-	 * Post: String
-	 * Action: Gets name of food*/
-	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	/* Pre: Abstract method from CursedConsumable
-	 * Post: void
-	 * Action: sets Name of food*/
-	@Override
-	public void setName(String newName) {
-		// TODO Auto-generated method stub
-
-	}
-
-	/* Pre: Abstract method from CursedConsumable
-	 * Post: double
-	 * Action: gets price of food*/
-	@Override
-	public double getPrice() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	/* Pre: Abstract method from CursedConsumable
-	 * Post: void
-	 * Action: sets Price of food*/
-	@Override
-	public void setPrice(double newPrice) {
-		// TODO Auto-generated method stub
-
-	}
-
-
 }
