@@ -107,7 +107,7 @@ public class carnivalMain {
 					choice = input.nextLine();
 					if (choice.equals("1")) {
 						GhastlyFoods gf = new GhastlyFoods(p1);
-						gf.userFoods();
+						gf.userMain();
 						gf.order();
 					} else if (choice.equals("2")) {
 						HellboundDrinks gf = new HellboundDrinks(p1);
