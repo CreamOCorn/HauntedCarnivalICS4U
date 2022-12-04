@@ -21,36 +21,23 @@ public abstract class CursedConsumables {
 		price = newPrice;
 	}
 	
-	
+	//constructor 
 	/* Pre: Null
-	 * Post: String
-	 * Action: gets name of food*/
-	public abstract String getName();
+	 * Post: Null
+	 * Action: allows the user to input values to order*/
+	public abstract void order();
 	
+	//constructor 
 	/* Pre: Null
-	 * Post: Void
-	 * Action: sets name of food*/
-	public abstract void setName(String newName);
+	 * Post: Null
+	 * Action: Allows user to see the options to order*/
+	public abstract void getOrder();
 	
+	//constructor 
 	/* Pre: Null
-	 * Post: double
-	 * Action: gets price of food*/
-	public abstract double getPrice();
-	
-	/* Pre: Null
-	 * Post: Void
-	 * Action: sets price of food*/
-	public abstract void setPrice(double newPrice);
-	
-	   
-	/* Pre: Null
-	 * Post: String
-	 * Action: returns a ToString of the name and price if it is necessary*/
-	public String toString() {
-		return "You chose: " + name + "the price of the food will cost: " + price;
-	}
-	
-	
+	 * Post: Null
+	 * Action: Prints out the order/inventory back to user*/
+	public abstract void showOrder();
 
 }
 
