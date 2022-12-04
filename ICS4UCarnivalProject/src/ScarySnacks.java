@@ -87,9 +87,4 @@ public class ScarySnacks extends CursedConsumables{
 		        }
 	}
 
-	@Override
-	public void showOrder() {
-		// TODO Auto-generated method stub
-		
-	}
 }
