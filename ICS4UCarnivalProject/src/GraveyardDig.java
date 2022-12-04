@@ -34,7 +34,7 @@ public class GraveyardDig extends HauntedCarnivalGame {
 			System.out.println("Do you need to read the instructions of the game? (Y/N)");
 			review = input.nextLine().toLowerCase();
 			if (review.contains("y")) {
-				System.out.println("You will be choosing the x and y coordinates to dig from...");
+				System.out.println("\nYou will be choosing the x and y coordinates to dig from...\n");
 				displayPlane();
 				System.out.println("And you have the chance to dig up tickets or prizes! [Press Enter to Continue]");
 				input.nextLine();
