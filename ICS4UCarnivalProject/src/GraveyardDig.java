@@ -232,7 +232,7 @@ public class GraveyardDig extends HauntedCarnivalGame {
 	
 	/* Pre: Null
 	 * Post: Void
-	 * Action: Subtracts 5 dollars from the player*/
+	 * Action: Subtracts 5 dollars from the player as a fee for the game*/
 	public void pay () {
 		p.money -=5;
 	}

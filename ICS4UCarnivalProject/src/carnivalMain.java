@@ -58,7 +58,7 @@ public class carnivalMain {
 					+ "2) Graveyard Dig\n"
 					+ "3) Haunted Maze\n"
 					+ "4) Devilish Diner\n"
-					+ "5) Prize Stand\n"
+					+ "5) Prize Stand/ATM Machine\n"
 					+ "6) Check your inventory\n\n"
 					+ "7) Leave the carnival and go home");
 			input = new Scanner (System.in); //refresh the scanner
