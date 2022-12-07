@@ -82,15 +82,11 @@ public class GhastlyFoods extends CursedConsumables{
 
 	}
 	
+	
 	/* Pre: Null
 	 * Post: void
-	 * Action: 	//order to show them what they have in their inventory after ordering that meal, Used from CursedConsumables*/
-	public void showOrder() {
-		System.out.println("Your inventory now looks like this: " );
-		for(int i = 0; i<player.inventory.length; i++) {
-		            System.out.println((i+1) + ") " + player.inventory[i]);
-		        }
-
-
-	}
+	 * Action: goes through method in superclass which shows user inventory*/
+public void foodOrder() {
+	showOrder();
+}
 }

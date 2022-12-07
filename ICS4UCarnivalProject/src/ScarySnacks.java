@@ -21,14 +21,11 @@ public class ScarySnacks extends CursedConsumables{
 		
 		if(snackQ.equals("Y") || snackQ.equals("y")) {
 			order();
-			showOrder();
+			order();
 		}else {
 			System.out.println("Return back to the carnival!");
 		}
 	}
-	
-	
-	
 	
 	/* Pre: Null
 	 * Post: void
@@ -77,19 +74,11 @@ public class ScarySnacks extends CursedConsumables{
 		}
 	}
 	
+	
 	/* Pre: Null
 	 * Post: void
-	 * Action: 	//order to show them what they have in their inventory after ordering that snack*/
-	public void showOrder() {
-		System.out.println("Your inventory now looks like this: " );
-		for(int i = 0; i<player.inventory.length; i++) {
-		            System.out.println((i+1) + ") " + player.inventory[i]);
-		        }
+	 * Action: goes through method in superclass which shows user inventory*/
+	public void foodOrder() {
+		showOrder();
 	}
-
-	@Override
-	public void showOrder() {
-		// TODO Auto-generated method stub
-		
 	}
-}

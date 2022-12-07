@@ -15,43 +15,35 @@ public abstract class CursedConsumables {
 		name = "this food is not found";
 		}
 	
-	private player a;
-	
-	//making a constructor for c to equal a value for player
-    public CursedConsumables (Player player) {
-        a = player;
-    }
-	
-	//creating new variable from Player for Scary Snacks
-	private Player c;
-	
-	//making a constructor for c to equal a value for player
-    public CursedConsumables (Player player) {
-        c = player;
-    }
-	//constructor which makes name and price instead of it being given
-	public CursedConsumables(String newName, double newPrice) {
-		name = newName;
-		price = newPrice;
-	}
-	
-	//constructor 
-	/* Pre: Null
-	 * Post: Null
-	 * Action: allows the user to input values to order*/
-	public abstract void order();
-	
-	//constructor 
-	/* Pre: Null
-	 * Post: Null
-	 * Action: Allows user to see the options to order*/
-	public abstract void getOrder();
-	
-	//constructor 
-	/* Pre: Null
-	 * Post: Null
-	 * Action: Prints out the order/inventory back to user*/
-	public abstract void showOrder();
 
+	    
+	    
+	    //variables
+	    protected Player player;
+	    
+	    //constructor 
+	    public CursedConsumables (Player p) {
+	        player = p;
+	    }
+	    
+	    /* Pre: Null
+	     * Post: Null
+	     * Action: allows the user to input values to order*/
+	    public abstract void order();
+	    
+	    /* Pre: Null
+	     * Post: Null
+	     * Action: Allows user to see the options to order*/
+	    public abstract void getOrder();
+
+	    /* Pre: Null
+	     * Post: Null
+	     * Action: Prints out the order/inventory back to user*/
+	    public void showOrder() {
+			System.out.println("Your inventory now looks like this: " );
+			for(int i = 0; i<player.inventory.length; i++) {
+			            System.out.println((i+1) + ") " + player.inventory[i]);
+			}
+	    }
 }
 
